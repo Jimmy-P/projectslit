@@ -26,10 +26,7 @@ public class SLIT extends Application {
     String user3 = "3";
     String pw3 = "root3";
     String checkUser, checkPw;
-    //int a = 0;
-    //int b = 0;
-    //int c = 0;
-    //int d = 0;
+
 
     public static void main(String[] args) {
         launch(args);
@@ -50,9 +47,7 @@ public class SLIT extends Application {
         PasswordField pwBox = new PasswordField();
         pwBox.setPromptText("Enter Password");
         final Text actiontarget = new Text();
-        //Label label7 = new Label("Username");
-        //Label label8 = new Label("Password");
-        //button1.setOnAction(e -> window.setScene(scene2));
+        
         
 
         //Layout 1 
@@ -66,8 +61,6 @@ public class SLIT extends Application {
         GridPane.setConstraints(button1, 1, 12);
         GridPane.setConstraints(pwBox, 1, 11);
         GridPane.setConstraints(actiontarget, 1, 13);
-        //GridPane.setConstraints(label8, 0, 11);
-        //GridPane.setConstraints(label7, 0, 10);
         layout1.setGridLinesVisible(false);
         layout1.getChildren().addAll(label1, button1, userTextField, pwBox, actiontarget);
         scene1 = new Scene(layout1, 300, 400);
@@ -90,8 +83,8 @@ public class SLIT extends Application {
                                 ms.start(window);
                         }
                         else{
-                                //System.out.println("feil");
-                                actiontarget.setText("feil");
+                                
+                                actiontarget.setText("Feil brukernavn/passord");
                         }
                         userTextField.setText("");
                         pwBox.setText("");
