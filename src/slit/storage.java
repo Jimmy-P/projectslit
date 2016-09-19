@@ -6,7 +6,7 @@ import java.util.Arrays;
 /*
     Denne klassen holder på variabler og inneholder get & set metoder
 
-
+        TESTER FOR GITHUB OG GREIER
 */
 public class storage{
     
