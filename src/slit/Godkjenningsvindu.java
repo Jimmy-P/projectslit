@@ -43,27 +43,21 @@ public class Godkjenningsvindu extends Application {
         btnG.setText("Godkjenn");
         btnG.setMinSize(boxWidth, boxHeight);
         btnG.setMaxSize(boxWidth, boxHeight);
-        btnG.setOnAction(new EventHandler<ActionEvent>() {
-            
-            @Override
-            public void handle(ActionEvent event) {
+        btnG.setOnAction(e -> {
                 System.out.println("Godkjent");
                 kommentar = kommentarTextArea.getText();
                 System.out.println(kommentar);
-            }
         });
+        
         Button btnIG = new Button();
         btnIG.setText("Ikke godkjent");
         btnIG.setMinSize(boxWidth, boxHeight);
         btnIG.setMaxSize(boxWidth, boxHeight);
-        btnIG.setOnAction(new EventHandler<ActionEvent>() {
-            
-            @Override
-            public void handle(ActionEvent event) {
+        btnIG.setOnAction(e -> {
                 System.out.println("Ikke godkjent");
                 kommentar = kommentarTextArea.getText();
                 System.out.println(kommentar);
-            }
+
         });
 
         

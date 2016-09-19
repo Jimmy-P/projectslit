@@ -6,7 +6,7 @@ import java.util.Arrays;
 /*
     Denne klassen holder på variabler og inneholder get & set metoder
 
-
+        
 */
 public class storage{
     
@@ -14,7 +14,7 @@ public class storage{
     
     
     
-        static ArrayList<String> målModul1 = new ArrayList<String>(
+    static ArrayList<String> målModul1 = new ArrayList<String>(
     Arrays.asList("Læringsmål 1", "Læringsmål 2", "Læringsmål 3", "Læringsmål 4")
     );
     static ArrayList<String> målModul2 = new ArrayList<String>(
