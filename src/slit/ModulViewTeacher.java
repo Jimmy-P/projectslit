@@ -31,10 +31,10 @@ public class ModulViewTeacher extends Application {
     ModulViewTeacher(int modulNr) // Constructor må sende parametre for å si noe om hvilken modul det er + må hente læringsmål basert på modulnr
     {
        
-            LM1String = storage.getLM(modulNr, 1);
-            LM2String = storage.getLM(modulNr, 2);
-            LM3String = storage.getLM(modulNr, 3);
-            LM4String = storage.getLM(modulNr, 4);
+            LM1String = Storage.getLM(modulNr, 1);
+            LM2String = Storage.getLM(modulNr, 2);
+            LM3String = Storage.getLM(modulNr, 3);
+            LM4String = Storage.getLM(modulNr, 4);
 
 
         
@@ -86,10 +86,10 @@ public class ModulViewTeacher extends Application {
 
         buttonSave.setOnAction(e -> {
                 
-                storage.setLM(modulNummer, 1, LM1String);
-                storage.setLM(modulNummer, 2, LM2String);
-                storage.setLM(modulNummer, 3, LM3String);
-                storage.setLM(modulNummer, 4, LM4String);
+                Storage.setLM(modulNummer, 1, LM1String);
+                Storage.setLM(modulNummer, 2, LM2String);
+                Storage.setLM(modulNummer, 3, LM3String);
+                Storage.setLM(modulNummer, 4, LM4String);
             
                                 
                 ModulOverview MO = new ModulOverview();

@@ -11,26 +11,34 @@ package slit;
  */
 public class Student {
     
-    
-    
-    private String name;
-    private String kommentarModul1;
-    private boolean godkjentModul1;
-    
     public Student(String name){
         
         this.name = name;
         
     }
+    
+    private String name;
+    private String kommentarModul1;
+    private boolean godkjentModul1;
+    
+    
 
 public String getName(){
 
     return name;
 }
 
-public void setKomment(){
+public void setComment(String comment){
 
-    return name;
+    kommentarModul1 = comment;
+    
+}
+
+public void approveComment(boolean approved){
+ 
+    godkjentModul1 = approved;
+    System.out.println("Modul godkjent");
+    
 }
 
 

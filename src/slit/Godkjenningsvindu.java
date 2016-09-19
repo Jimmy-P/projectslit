@@ -44,7 +44,9 @@ public class Godkjenningsvindu extends Application {
         btnG.setMinSize(boxWidth, boxHeight);
         btnG.setMaxSize(boxWidth, boxHeight);
         btnG.setOnAction(e -> {
-                System.out.println("Godkjent");
+                
+            //Kode her
+            
                 kommentar = kommentarTextArea.getText();
                 System.out.println(kommentar);
         });

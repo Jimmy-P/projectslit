@@ -28,10 +28,10 @@ public class ModulViewHandin extends Application {
            ModulViewHandin (int modulNr) // Constructor må sende parametre for å si noe om hvilken modul det er + må hente læringsmål basert på modulnr
     {
        
-            LM1String = storage.getLM(modulNr, 1);
-            LM2String = storage.getLM(modulNr, 2);
-            LM3String = storage.getLM(modulNr, 3);
-            LM4String = storage.getLM(modulNr, 4);
+            LM1String = Storage.getLM(modulNr, 1);
+            LM2String = Storage.getLM(modulNr, 2);
+            LM3String = Storage.getLM(modulNr, 3);
+            LM4String = Storage.getLM(modulNr, 4);
 
 
         
