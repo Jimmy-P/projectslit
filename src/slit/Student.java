@@ -13,5 +13,26 @@ public class Student {
     
     
     
+    private String name;
+    private String kommentarModul1;
+    private boolean godkjentModul1;
     
+    public Student(String name){
+        
+        this.name = name;
+        
+    }
+
+public String getName(){
+
+    return name;
+}
+
+public void setKomment(){
+
+    return name;
+}
+
+
+
 }
