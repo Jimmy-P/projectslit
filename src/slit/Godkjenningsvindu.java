@@ -54,8 +54,8 @@ public class Godkjenningsvindu extends Application {
         btnIG.setMinSize(boxWidth, boxHeight);
         btnIG.setMaxSize(boxWidth, boxHeight);
         btnIG.setOnAction(e -> {
-                System.out.println("Ikke godkjent");
-                kommentar = kommentarTextArea.getText();
+                System.out.println("Ikke godkjent"); //Trenger funksjon for å markere innleveringen som godkjent
+                kommentar = kommentarTextArea.getText(); //Kommentaren må sendes med godkjenningen
                 System.out.println(kommentar);
 
         });
