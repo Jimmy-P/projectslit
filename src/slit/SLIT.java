@@ -20,7 +20,7 @@ public class SLIT extends Application {
     Stage window;
     Scene scene1, scene2;
     String user1 = "1";
-    String pw1 = "root1";
+    String pw1 = "1";
     String user2 = "2";
     String pw2 = "root2";
     String user3 = "3";
