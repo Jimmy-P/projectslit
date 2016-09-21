@@ -10,7 +10,6 @@ import static javafx.application.Application.launch;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 /**
@@ -145,10 +144,13 @@ public class StatusStudent extends Application {
         */
         
         VBox vb1 = new VBox();
+        vb1.getStyleClass().add("statusOK");
         vb1.getChildren().addAll(lblMod1, btnMod1, dateMod1);
         VBox vb2 = new VBox();
+        vb2.getStyleClass().add("statusOK");
         vb1.getChildren().addAll(lblMod2, btnMod2, dateMod2);
         VBox vb3 = new VBox();
+        vb3.getStyleClass().add("statusLevert");
         vb1.getChildren().addAll(lblMod3, btnMod3, dateMod3);
         VBox vb4 = new VBox();
         vb1.getChildren().addAll(lblMod4, btnMod4, dateMod4);
@@ -178,6 +180,7 @@ public class StatusStudent extends Application {
                 vb10, vb11, vb12, vb13, vb14);
 
         scene15 = new Scene(root, 800, 250);
+        scene15.getStylesheets().add("slit/styling.css");
         
         
         primaryStage.setTitle("Redigering av moduler");
