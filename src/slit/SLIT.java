@@ -24,7 +24,7 @@ public class SLIT extends Application {
     String user2 = "2";
     String pw2 = "2";
     String user3 = "3";
-    String pw3 = "root3";
+    String pw3 = "3";
     String checkUser, checkPw;
 
 
