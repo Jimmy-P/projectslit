@@ -33,15 +33,19 @@ modulstatuser
     -fx-background-color: #6DF2B6;
     -fx-border-color: #00A85C;
     -fx-padding: 5;
-    -fx-spacing: 30;
+    -fx-spacing: 5;
 }
 
 .statusLevert {
     -fx-background-color: #FC9B12;
     -fx-border-color: #E8600C;
+    -fx-padding: 5;
+    -fx-spacing: 5;
 }
 
 .statusLastOpp {
     -fx-background-color: #DDFC12;
     -fx-border-color: #F5B00F;
+    -fx-padding: 5;
+    -fx-spacing: 5;
 }
