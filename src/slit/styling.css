@@ -26,16 +26,22 @@ and open the template in the editor.
     -fx-spacing: 10;
 }
 
+/*
+modulstatuser
+*/
 .statusOK {
     -fx-background-color: #6DF2B6;
+    -fx-border-color: #00A85C;
     -fx-padding: 5;
     -fx-spacing: 30;
 }
 
 .statusLevert {
     -fx-background-color: #FC9B12;
+    -fx-border-color: #E8600C;
 }
 
 .statusLastOpp {
     -fx-background-color: #DDFC12;
+    -fx-border-color: #F5B00F;
 }
