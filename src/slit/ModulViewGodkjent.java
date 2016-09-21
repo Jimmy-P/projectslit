@@ -76,12 +76,10 @@ public class ModulViewGodkjent extends Application {
 
         
         buttonCancel.setText("Tilbake");
-        buttonCancel.setOnAction(new EventHandler<ActionEvent>() {
+        buttonCancel.setOnAction(e -> {
+                StatusStudent ss = new StatusStudent();
+                ss.start(primaryStage);
             
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println("Tilbake");
-            }
         });
 
         
@@ -132,7 +130,7 @@ public class ModulViewGodkjent extends Application {
         
         Scene scene = new Scene(rootPane, 450, 350);
         
-        primaryStage.setTitle("Lever modul");
+        primaryStage.setTitle("Godkjent modul");
         primaryStage.setScene(scene);
         primaryStage.show();
     }

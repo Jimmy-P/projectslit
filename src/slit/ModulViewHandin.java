@@ -80,12 +80,10 @@ public class ModulViewHandin extends Application {
         });
         
         buttonCancel.setText("Tilbake");
-        buttonCancel.setOnAction(new EventHandler<ActionEvent>() {
+        buttonCancel.setOnAction(e -> {
+            StatusStudent ss = new StatusStudent();
+                ss.start(primaryStage);           
             
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println("Tilbake");
-            }
         });
           buttonUpload.setText("Last opp");
         buttonUpload.setOnAction(new EventHandler<ActionEvent>() {

@@ -79,8 +79,8 @@ public class SLIT extends Application {
                                 mta.start(window);
                         }
                         if(checkUser.equals(user3) && checkPw.equals(pw3)){
-                                MainStudent ms = new MainStudent();
-                                ms.start(window);
+                                StatusStudent ss = new StatusStudent();
+                                ss.start(window);
                         }
                         else{
                                 

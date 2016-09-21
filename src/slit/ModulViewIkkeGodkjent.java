@@ -85,12 +85,10 @@ public class ModulViewIkkeGodkjent extends Application {
         });
         
         buttonCancel.setText("Tilbake");
-        buttonCancel.setOnAction(new EventHandler<ActionEvent>() {
+        buttonCancel.setOnAction(e -> {
             
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println("Tilbake");
-            }
+            StatusStudent ss = new StatusStudent();
+                ss.start(primaryStage);
         });
           buttonUpload.setText("Last opp");
         buttonUpload.setOnAction(new EventHandler<ActionEvent>() {
