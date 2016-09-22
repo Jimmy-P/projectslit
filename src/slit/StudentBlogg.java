@@ -43,7 +43,7 @@ public class StudentBlogg extends Application{
         
         BorderPane bpBlog = new BorderPane();
         HBox studentmeny = new HBox();
-        studentmeny.getStyleClass().add("studentmeny");
+        //studentmeny.getStyleClass().add("studentmeny");
         
         Button sButton = new Button("status");
         studentmeny.getChildren().add(sButton);
@@ -55,7 +55,7 @@ public class StudentBlogg extends Application{
         bpBlog.setTop(studentmeny);
         
         VBox archive = new VBox();
-        archive.getStyleClass().add("archive");
+        //archive.getStyleClass().add("archive");
         bpBlog.setRight(archive);
         Text p01 = new Text("Post 1");
         archive.getChildren().add(p01);
@@ -69,7 +69,7 @@ public class StudentBlogg extends Application{
         archive.getChildren().add(p05);
         
         VBox blogView = new VBox();
-        blogView.getStyleClass().add("blogView");
+        //blogView.getStyleClass().add("blogView");
         bpBlog.setCenter(blogView);
         
         VBox blogpost = new VBox();
@@ -105,7 +105,7 @@ public class StudentBlogg extends Application{
         blogView.getChildren().add(blogpost2);
         
         Scene blog = new Scene(bpBlog, 500, 400);
-        blog.getStylesheets().add("styling.css");
+        //blog.getStylesheets().add("styling.css");
         primaryStage.setScene(blog);
         primaryStage.show();
     }
