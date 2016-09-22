@@ -38,28 +38,23 @@ public class MainTeacher extends Application {
         
         btnStatus.setOnAction(e ->
         {
-            //KODE HER
             subStageMethod("StatusTable");
         });
         btnRK.setOnAction(e ->
         {
-            //KODE HER
             subStageMethod("RK");
                         
         });
         btnDB.setOnAction(e ->
         {
-            //KODE HER
             subStageMethod("Database");
         });
         btnAddUser.setOnAction(e ->
         {
-            //KODE HER
-            subStageMethod("Disregard");
+            subStageMethod("AddUser");
         });
         btnModulEdit.setOnAction(e ->
         {
-            //KODE HER
             subStageMethod("ModulEdit");
         });
         
@@ -85,7 +80,8 @@ public class MainTeacher extends Application {
            }
            else if(subMenu =="Database") 
            {
-               //TRENGS NOE FUNKSJONALITET HER
+               DatabaseMenu dbm = new DatabaseMenu();
+               dbm.start(subStage);
            }
            else if(subMenu =="RK")
            {
@@ -97,6 +93,12 @@ public class MainTeacher extends Application {
                StatusViewTeacher svt = new StatusViewTeacher();
                svt.start(subStage);
            }
+           else if(subMenu =="AddUser")
+           {
+               AddUserForm auf = new AddUserForm();
+               auf.start(subStage);
+           }
+           
            else
            {            
             subStage.show();
