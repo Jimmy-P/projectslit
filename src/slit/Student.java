@@ -11,36 +11,44 @@ package slit;
  */
 public class Student {
     
-    public Student(String name){
-        
-        this.name = name;
-        
-    }
+    
     
     private String name;
     private String kommentarModul1;
-    private boolean godkjentModul1;
+    private String doneModul1;
     
     
+    public Student(String name, String kommentar1, String points1){
+        
+        this.name = name;
+        this.kommentarModul1 = kommentar1;
+        this.doneModul1 = points1;
+    }
 
-public String getName(){
+    public String getName() {
+        return name;
+    }
 
-    return name;
-}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-public void setComment(String comment){
+    public String getKommentarModul1() {
+        return kommentarModul1;
+    }
 
-    kommentarModul1 = comment;
+    public void setKommentarModul1(String kommentarModul1) {
+        this.kommentarModul1 = kommentarModul1;
+    }
+
+    public String getDoneModul1() {
+        return doneModul1;
+    }
+
+    public void setDoneModul1(String doneModul1) {
+        this.doneModul1 = doneModul1;
+    }
     
-}
-
-public void approveComment(boolean approved){
- 
-    godkjentModul1 = approved;
-    System.out.println("Modul godkjent");
-    
-}
-
 
 
 }

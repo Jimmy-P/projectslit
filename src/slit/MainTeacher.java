@@ -92,6 +92,11 @@ public class MainTeacher extends Application {
                Rettingskø rk1 = new Rettingskø();
                rk1.start(subStage);
            }
+           else if(subMenu =="StatusTable")
+           {
+               StatusViewTeacher svt = new StatusViewTeacher();
+               svt.start(subStage);
+           }
            else
            {            
             subStage.show();
