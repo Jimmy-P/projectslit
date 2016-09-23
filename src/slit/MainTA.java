@@ -16,7 +16,7 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author Jimmy
+ * @author Kjetil
  */
 public class MainTA extends Application {
     Stage subStage = new Stage();
@@ -66,7 +66,8 @@ public class MainTA extends Application {
            if(subMenu == "StatusTable")
            {
                
-               //VISE OVERSIKT STUDENTSTATUS
+               StatusViewTeacher svt = new StatusViewTeacher();
+               svt.start(subStage);
                               
            }
            else if(subMenu =="RK")

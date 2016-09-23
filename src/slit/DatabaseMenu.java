@@ -17,7 +17,7 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author Jimmy
+ * @author Kjetil
  */
 public class DatabaseMenu extends Application {
     

@@ -14,7 +14,7 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author Kjetil
+ * @author Maria
  */
 public class StatusStudent extends Application {
     

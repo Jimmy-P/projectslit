@@ -71,7 +71,18 @@ public class ModulViewGodkjent extends Application {
         CheckBox cb3 = new CheckBox();
         CheckBox cb4 = new CheckBox();
         
+        cb1.setSelected(true);
+        cb1.setDisable(true);
+        cb2.setSelected(true);
+        cb2.setDisable(true);
+        cb3.setSelected(true);
+        cb3.setDisable(true);
+        cb4.setSelected(true);
+        cb4.setDisable(true);
+        
+        
        
+        
         Button buttonCancel = new Button();
 
         

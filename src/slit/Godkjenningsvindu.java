@@ -21,7 +21,7 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author Jimmy
+ * @author Kjetil
  */
 public class Godkjenningsvindu extends Application {
     

@@ -31,7 +31,7 @@ import javafx.util.Callback;
 
 /**
  *
- * @author Jimmy
+ * @author Kjetil
  */
 public class StatusViewTeacher extends Application {
     
@@ -45,8 +45,7 @@ public class StatusViewTeacher extends Application {
         
         Scene scene = new Scene(new Group());
         primaryStage.setTitle("Table");
-        primaryStage.setWidth(300);
-        primaryStage.setHeight(500);
+        
         
  
         Label label = new Label("Tabell");
@@ -56,19 +55,11 @@ public class StatusViewTeacher extends Application {
         table.getItems().addAll(studentList());
         TableColumn nameCol = new TableColumn("First Name");
         nameCol.setCellValueFactory(new PropertyValueFactory("name"));
-        TableColumn modul1Col = new TableColumn("Module 1");
+        TableColumn modul1Col = new TableColumn("Modul 1");
         modul1Col.setCellValueFactory(new PropertyValueFactory("doneModul1"));
         TableColumn kommentarCol = new TableColumn("Kommentar");
         kommentarCol.setCellValueFactory(new PropertyValueFactory("kommentarModul1"));
-        /*nameCol.setCellValueFactory(new Callback, ObservableValue>()
-                {
-                    @Override
-                    public ObservableValue call(CellDataFeatures c){
-                    return new SimpleStringProperty(c.getValue().getName());
-                }
-                }
-                
-                );*/
+
         
         table.getColumns().addAll(nameCol, modul1Col, kommentarCol);
  
@@ -85,11 +76,11 @@ public class StatusViewTeacher extends Application {
      private List studentList() {
   
 
-  Student p1 = new Student("Ole", "hoho", "modul 1 Ole");
-  Student p2 = new Student("Dole", "hehe", "modul 1 Dole");
-  Student p3 = new Student("Doffen", "haha", "modul 1 Doffen");
-  Student p4 = new Student("Donald", "hihi", "modul 1 Donald");
+  Student s1 = new Student("Ole", "Bra", "56");
+  Student s2 = new Student("Dole", "Dårlig", "42");
+  Student s3 = new Student("Doffen", "Supert", "96");
+  Student s4 = new Student("Donald", "Elendig", "2");
 
-  return Arrays.asList(p1, p2, p3, p4);
+  return Arrays.asList(s1, s2, s3, s4);
  }
 }
