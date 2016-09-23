@@ -103,7 +103,7 @@ public class ModulOverview extends Application {
         root.getChildren().addAll(btnMod1, btnMod2, btnMod3, btnMod4, btnMod5, btnMod6, btnMod7, btnMod8, btnMod9, btnMod10, btnMod11, btnMod12, btnMod13, btnMod14);
         
 
-        scene15 = new Scene(root, 800, 250);
+        scene15 = new Scene(root, 500, 250);
         
         
         primaryStage.setTitle("Redigering av moduler");

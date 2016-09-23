@@ -14,7 +14,12 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import java.text.DecimalFormat;
+import javafx.scene.input.KeyCode;
 
+/**
+ *
+ * @author Bjørn Erik
+ */
 public class SLIT extends Application {
 
     Stage window;
@@ -39,13 +44,13 @@ public class SLIT extends Application {
         window = primaryStage;
 
         //UI Controls 1
-        Label label1 = new Label("Welcome!");
+        Label label1 = new Label("Velkommen!");
         label1.setFont(Font.font("Tahoma", FontWeight.NORMAL, 30));
         Button button1 = new Button("Login");
         TextField userTextField = new TextField();
-        userTextField.setPromptText("Enter Username");
+        userTextField.setPromptText("Brukernavn");
         PasswordField pwBox = new PasswordField();
-        pwBox.setPromptText("Enter Password");
+        pwBox.setPromptText("Passord");
         final Text actiontarget = new Text();
         
         
@@ -66,8 +71,8 @@ public class SLIT extends Application {
         scene1 = new Scene(layout1, 300, 400);
         
         
-        button1.setOnAction(new EventHandler<ActionEvent>() {
-                public void handle(ActionEvent event) {
+        button1.setOnAction(e ->
+                    {
                         checkUser = userTextField.getText().toString();
                         checkPw = pwBox.getText().toString();
                         if(checkUser.equals(user1) && checkPw.equals(pw1)){
@@ -88,16 +93,21 @@ public class SLIT extends Application {
                         }
                         userTextField.setText("");
                         pwBox.setText("");
-                    }
+                    
                 });
+        
+     
+                
         
              
         
 
         //Display scene 1 at first
         window.setScene(scene1);
-        window.setTitle("Welcome");
+        window.setTitle("Velkommen");
         window.show();
     }
+    
+    
 
 }

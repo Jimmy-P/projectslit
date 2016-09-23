@@ -48,7 +48,7 @@ public class ModulViewIkkeGodkjent extends Application {
     private int distanceFromTop = 25;
     private int adjLabelToCheckbox = -20; //Distance between LM label and checkbox
     public int numberOfLM = 4;
-    private String modulComment = "Innleveringen møtte ikke læringsmålene.";
+    private String modulComment = "Innleveringen har ikke blitt godkjent";
     
     @Override
     public void start(Stage primaryStage) {
