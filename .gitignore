@@ -1,3 +1,7 @@
 /nbproject/private/
 /build/
 /dist/
+/slit-server/nbproject/private/
+/slit-server/slit-server-ejb/nbproject/private/
+/slit-client/nbproject/private/
+/slit-interface/nbproject/private/
