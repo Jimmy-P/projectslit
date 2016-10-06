@@ -5,6 +5,7 @@
  */
 package slitclient;
 
+import Framework.UserManager;
 import Server.UserSessionBeanRemote;
 import javax.ejb.EJB;
 
@@ -23,7 +24,9 @@ public class Main {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        System.out.println(userSessionBean.getUserFromId(1));
+        UserManager um = new UserManager();
+       
+        System.out.println(um.getUserFromId(1));
     }
     
 }
