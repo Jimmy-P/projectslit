@@ -5,3 +5,10 @@
 /slit-server/slit-server-ejb/nbproject/private/
 /slit-client/nbproject/private/
 /slit-interface/nbproject/private/
+/slit-interface/build/
+/slit-server/slit-server-ejb/build/
+/slit-interface/dist/
+/slit-server/build/
+/slit-client/build/
+/slit-client/dist/
+/slit-server/slit-server-ejb/dist/
