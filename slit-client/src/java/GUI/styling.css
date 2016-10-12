@@ -1,0 +1,51 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 19.sep.2016, 05:59:46
+    Author     : Maria
+*/
+
+.studentmeny {
+    -fx-background-color: #90C3D4;
+    -fx-padding: 5;
+    -fx-spacing: 20;
+}
+
+.blogView {
+    -fx-background-color: #90ACD4;
+    -fx-padding: 5;
+    -fx-spacing: 10;
+}
+
+.archive {
+    -fx-background-color: #90D4D3;
+    -fx-padding: 5;
+    -fx-spacing: 10;
+}
+
+/*
+modulstatuser
+*/
+.statusOK {
+    -fx-background-color: #6DF2B6;
+    -fx-border-color: #00A85C;
+    -fx-padding: 5;
+    -fx-spacing: 5;
+}
+
+.statusLevert {
+    -fx-background-color: #FC9B12;
+    -fx-border-color: #E8600C;
+    -fx-padding: 5;
+    -fx-spacing: 5;
+}
+
+.statusLastOpp {
+    -fx-background-color: #DDFC12;
+    -fx-border-color: #F5B00F;
+    -fx-padding: 5;
+    -fx-spacing: 5;
+}
