@@ -5,9 +5,10 @@
  */
 package slitclient;
 
-import Framework.UserManager;
-import Server.UserSessionBeanRemote;
+import Framework.ModulManager;
+import Server.ModulSessionBeanRemote;
 import javax.ejb.EJB;
+
 
 /**
  *
@@ -16,7 +17,7 @@ import javax.ejb.EJB;
 public class Main {
 
     @EJB
-    private static UserSessionBeanRemote userSessionBean;
+    private static ModulSessionBeanRemote modulSessionBean;
     
 
     /**
@@ -24,9 +25,11 @@ public class Main {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        UserManager um = new UserManager();
+        ModulManager mm = new ModulManager();
        
-        System.out.println(um.getUserFromId(1));
+        System.out.println(mm.getModulName(1));
+        System.out.println(mm.getModulDescr(2));
+        System.out.println(mm.getModulAssignment(3));
     }
     
 }
