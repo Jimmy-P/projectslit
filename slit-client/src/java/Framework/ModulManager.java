@@ -21,7 +21,7 @@ public class ModulManager {
     private ModulSessionBeanRemote lookupModulSessionBeanRemote() {
         try {
             Context c = new InitialContext();
-            return (ModulSessionBeanRemote) c.lookup("java:comp/env/ModulSessionBean");
+            return (ModulSessionBeanRemote) c.lookup("java:global/slit-server-ejb/ModulSessionBean");
         } catch (NamingException ne) {
             Logger.getLogger(getClass().getName()).log(Level.SEVERE, "exception caught", ne);
             throw new RuntimeException(ne);

@@ -21,10 +21,10 @@ import javax.naming.NamingException;
 public class LaringsmalManager {
     
     
-    private LaringsmalSessionBeanRemote lookupLaringsmalSessionBeanRemote1() {
+    private LaringsmalSessionBeanRemote lookupLaringsmalSessionBeanRemote() {
         try {
             Context c = new InitialContext();
-            return (LaringsmalSessionBeanRemote) c.lookup("java:comp/env/LaringsmalSessionBean");
+            return (LaringsmalSessionBeanRemote) c.lookup("java:global/slit-server-ejb/LaringsmalSessionBean");
         } catch (NamingException ne) {
             Logger.getLogger(getClass().getName()).log(Level.SEVERE, "exception caught", ne);
             throw new RuntimeException(ne);
@@ -34,7 +34,7 @@ public class LaringsmalManager {
    
     
     public String getLaringsmalFromId(int l_ID) {
-        return this.lookupLaringsmalSessionBeanRemote1().getLaringsmalFromId(l_ID);
+        return this.lookupLaringsmalSessionBeanRemote().getLaringsmalFromId(l_ID);
 }
 
     
