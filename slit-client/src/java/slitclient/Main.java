@@ -5,6 +5,7 @@
  */
 package slitclient;
 
+import Framework.BrukerManager;
 import Framework.ModulManager;
 import Framework.LaringsmalManager;
 //import Server.LaringsmalSessionBeanRemote;
@@ -32,10 +33,20 @@ public class Main {
         // TODO code application logic here
         ModulManager mm = new ModulManager();
         LaringsmalManager lm = new LaringsmalManager();
-       
+        BrukerManager bm = new BrukerManager();
+        
         System.out.println(mm.getModulName(1));
         System.out.println(mm.getModulDescr(2));
         System.out.println(mm.getModulAssignment(3));
+        
+        System.out.println(bm.getBrukerFNavnFromId(2) + " " +  
+                bm.getBrukerENavnFromId(2));
+        
+        System.out.println(bm.getBrukerEmailFromId(2));
+        
+        System.out.println(bm.getBrukerPassordFromId(2));
+        
+        System.out.println(bm.getBrukerTypeFromId(2));
         System.out.println(lm.getLaringsmalFromId(1));
     }
     
