@@ -23,9 +23,8 @@ drop table Laringsmal;
  
 CREATE TABLE Laringsmal (
     l_ID INT AUTO_INCREMENT PRIMARY KEY,
-    l_tekst VARCHAR(300) NOT NULL,
-    m_ID INT NOT NULL,
-CONSTRAINT FOREIGN KEY (m_ID) REFERENCES Modul(m_ID)
+    l_tekst VARCHAR(300) NOT NULL
+    
 );
  
 CREATE TABLE Modul (
@@ -33,6 +32,8 @@ CREATE TABLE Modul (
     m_navn VARCHAR(100) NOT NULL,
     m_beskrivelse VARCHAR(1000) NOT NULL,
     m_oppgave VARCHAR(1000) NOT NULL,
+    l_ID INT NOT NULL,
+CONSTRAINT FOREIGN KEY (l_ID) REFERENCES Laringsmal(l_ID)
     
 );
  
@@ -83,16 +84,16 @@ CONSTRAINT FOREIGN KEY (b_ID) REFERENCES Bruker(b_ID)
  
  
 SELECT * FROM Laringsmal;
-INSERT INTO Laringsmal VALUES (NULL, 'Lær å lage et objekt', 1);
-INSERT INTO Laringsmal VALUES (NULL, 'Skriv en klasse', 1);
-INSERT INTO Laringsmal VALUES (NULL, 'Vite forskjellen på primitive typer', 1);
-INSERT INTO Laringsmal VALUES (NULL, 'Kompilere kode', 1);
+INSERT INTO Laringsmal VALUES (NULL, 'Lær å lage et objekt');
+INSERT INTO Laringsmal VALUES (NULL, 'Skriv en klasse');
+INSERT INTO Laringsmal VALUES (NULL, 'Vite forskjellen på primitive typer');
+INSERT INTO Laringsmal VALUES (NULL, 'Kompilere kode');
  
 SELECT * FROM Modul;
-INSERT INTO Modul VALUES (NULL, 'Modul 1', 'Primitive typer', 'Skriv kode som bruker minst 3 forskjellige primitive typer');
-INSERT INTO Modul VALUES (NULL, 'Modul 2', 'Klasser og objekter', 'Skriv kode som lager flere objekter av samme klasse');
-INSERT INTO Modul VALUES (NULL, 'Modul 3', 'Metoder', 'Skriv kode som bruker flere metoder');
-INSERT INTO Modul VALUES (NULL, 'Modul 4', 'Enkelt program', 'Skriv kode som bruker elementer fra alle de tidligere modulene');
+INSERT INTO Modul VALUES (NULL, 'Modul 1', 'Primitive typer', 'Skriv kode som bruker minst 3 forskjellige primitive typer', 1);
+INSERT INTO Modul VALUES (NULL, 'Modul 2', 'Klasser og objekter', 'Skriv kode som lager flere objekter av samme klasse', 1);
+INSERT INTO Modul VALUES (NULL, 'Modul 3', 'Metoder', 'Skriv kode som bruker flere metoder', 1);
+INSERT INTO Modul VALUES (NULL, 'Modul 4', 'Enkelt program', 'Skriv kode som bruker elementer fra alle de tidligere modulene', 1);
  
 INSERT INTO Bruker VALUES (NULL, 'Per', 'Olsen', 'polsen@online.no', 'hunter2', 3);
 INSERT INTO Bruker VALUES (NULL, 'Ole', 'Olsen', 'oolsen@online.no', 'passord', 3);
