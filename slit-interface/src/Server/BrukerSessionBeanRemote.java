@@ -5,6 +5,7 @@
  */
 package Server;
 
+import DataModel.BrukerDataModel;
 import javax.ejb.Remote;
 
 /**
@@ -14,6 +15,11 @@ import javax.ejb.Remote;
 @Remote
 public interface BrukerSessionBeanRemote {
     
+    BrukerDataModel getBrukerFromBId(int id);
+    
+    BrukerDataModel brukerLogin(String epost, String passord);
+    
+    /*
     String getBrukerFNavnFromId(int bId);
     
     String getBrukerENavnFromId(int bId);
@@ -23,4 +29,5 @@ public interface BrukerSessionBeanRemote {
     String getBrukerPassordFromId(int bId);
     
     int getBrukerTypeFromId(int bId);
+    */
 }

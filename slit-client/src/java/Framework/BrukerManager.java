@@ -5,6 +5,7 @@
  */
 package Framework;
 
+import DataModel.BrukerDataModel;
 import Server.BrukerSessionBeanRemote;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -26,9 +27,10 @@ public class BrukerManager {
             throw new RuntimeException(ne);
         }
     }
+    /*
     public String getBrukerFNavnFromId(int id) {
         return this.lookupBrukerSessionBeanRemote().getBrukerFNavnFromId(id);
-}   
+    }   
     public String getBrukerENavnFromId(int id) {
         return this.lookupBrukerSessionBeanRemote().getBrukerENavnFromId(id);
     }
@@ -41,6 +43,12 @@ public class BrukerManager {
     public int getBrukerTypeFromId(int id){
         return this.lookupBrukerSessionBeanRemote().getBrukerTypeFromId(id);
     }
+    */
     
-    
+    public BrukerDataModel getBrukerFromId(int id) {
+        return this.lookupBrukerSessionBeanRemote().getBrukerFromBId(id);
+    }
+    public BrukerDataModel brukerLogin(String email, String password){
+        return this.lookupBrukerSessionBeanRemote().brukerLogin(email, password);
+    }
 }

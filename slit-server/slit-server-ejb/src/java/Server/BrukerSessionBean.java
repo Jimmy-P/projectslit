@@ -5,10 +5,12 @@
  */
 package Server;
 
+import DataModel.BrukerDataModel;
 import Database.Bruker;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 /**
  *
@@ -19,12 +21,62 @@ public class BrukerSessionBean implements BrukerSessionBeanRemote {
     
     @PersistenceContext(unitName = "slit-server-ejbPU")
     private EntityManager em;
-    // Add business logic below. (Right-click in editor and choose
-    // "Insert Code > Add Business Method")
+    
+
+
+    @Override
+    public BrukerDataModel getBrukerFromBId(int b_Id) {
+        Bruker bruker = em.find(Bruker.class, b_Id);
+        
+        return convertBruker(bruker);
+    }
+    
+    private BrukerDataModel convertBruker(Bruker bruker){
+        
+        BrukerDataModel brukerDM = new BrukerDataModel();
+        
+        brukerDM.setbId(bruker.getBId());
+        brukerDM.setbFnavn(bruker.getBFnavn());
+        brukerDM.setbEnavn(bruker.getBEnavn());
+        brukerDM.setbEmail(bruker.getBEmail());
+        brukerDM.setbPassord(bruker.getBPassord());
+        brukerDM.setbType(bruker.getBType());
+                
+        return brukerDM;
+    }
+    
     public void persist(Object object) {
         em.persist(object);
     }  
+    
+    // Add business logic below. (Right-click in editor and choose
+    // "Insert Code > Add Business Method")
+    
 
+    @Override
+    public BrukerDataModel brukerLogin(String epost, String passord) {
+        BrukerDataModel loginModel = new BrukerDataModel();
+        
+        
+        try{
+            Query query = em.createNamedQuery("Bruker.brukerLogin", Bruker.class);
+            
+            query.setParameter("bEmail", epost);
+            query.setParameter("bPassord", passord);
+            
+            Bruker bruker = (Bruker)query.getSingleResult();
+            
+            loginModel = this.convertBruker(bruker);
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+        System.out.println("Etter Query: " + loginModel.getbEmail());
+        System.out.println("Etter Query: " + loginModel.getbPassord());
+        return loginModel;
+    }
+
+    /*
     @Override
     public String getBrukerFNavnFromId(int bId) {
         return em.find(Bruker.class, bId).getBFnavn();
@@ -49,6 +101,6 @@ public class BrukerSessionBean implements BrukerSessionBeanRemote {
     @Override
     public int getBrukerTypeFromId(int bId) {
         return em.find(Bruker.class, bId).getBType();
-    }
-
+    */
+    
 }

@@ -26,6 +26,8 @@ import javax.xml.bind.annotation.XmlTransient;
 /**
  *
  * @author bevo
+ * @author Adam
+ * 
  */
 @Entity
 @Table(name = "Bruker")
@@ -37,7 +39,8 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "Bruker.findByBEnavn", query = "SELECT b FROM Bruker b WHERE b.bEnavn = :bEnavn"),
     @NamedQuery(name = "Bruker.findByBEmail", query = "SELECT b FROM Bruker b WHERE b.bEmail = :bEmail"),
     @NamedQuery(name = "Bruker.findByBPassord", query = "SELECT b FROM Bruker b WHERE b.bPassord = :bPassord"),
-    @NamedQuery(name = "Bruker.findByBType", query = "SELECT b FROM Bruker b WHERE b.bType = :bType")})
+    @NamedQuery(name = "Bruker.findByBType", query = "SELECT b FROM Bruker b WHERE b.bType = :bType"),
+    @NamedQuery(name = "Bruker.brukerLogin", query = "SELECT b FROM Bruker b WHERE b.bEmail = :bEmail AND b.bPassord = :bPassord")})
 public class Bruker implements Serializable {
 
     private static final long serialVersionUID = 1L;
