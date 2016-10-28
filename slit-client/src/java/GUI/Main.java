@@ -11,6 +11,7 @@ package GUI;
  * and open the template in the editor.
  */
 
+import Framework.BrukerManager;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
 import javafx.fxml.FXMLLoader;
@@ -24,6 +25,8 @@ import javafx.stage.Stage;
  * @author Adam
  */
 public class Main extends Application{
+    
+    BrukerManager bm = new BrukerManager();
     
     private Stage stage;
     FXMLLoader loader = new FXMLLoader();
@@ -53,7 +56,9 @@ public class Main extends Application{
     }
     
     public static void main(String[] args) {
+        
         launch(args);
         
     }
+    
 }

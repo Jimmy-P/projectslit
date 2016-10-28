@@ -37,4 +37,5 @@ public class ModulManager {
         return this.lookupModulSessionBeanRemote().getModulAssignment(id);
     }
     
+    
 }
