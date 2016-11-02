@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane fx:id="PaneBakgrunnBloggen" layoutY="-7.0" prefHeight="414.0" prefWidth="616.0">
+         <children>
+            <TextField fx:id="TextFieldOverskriftBloggen" layoutX="34.0" layoutY="37.0" prefHeight="66.0" prefWidth="250.0" text="Bloggen til Liv :)">
+               <font>
+                  <Font name="Bauhaus 93" size="30.0" />
+               </font>
+            </TextField>
+            <TitledPane fx:id="TitledPaneBloggen" animated="false" layoutX="44.0" layoutY="126.0" prefHeight="225.0" prefWidth="231.0" text="Blogg Uke 34">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="202.0" prefWidth="156.0">
+                     <children>
+                        <TextArea fx:id="TextAreaInnleggBloggen" layoutX="1.0" layoutY="1.0" prefHeight="201.0" prefWidth="250.0" text="Denne uka har jeg jobbet med modul&#10;1, og den var ikke så vanskelig.&#10;&#10;Gøy at vi kunne se grafisk hva vi gjorde.&#10;&#10;Ditt og datt og trallallalllallla, dette&#10;blir bra!" />
+                        <Button layoutX="234.0" layoutY="83.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="29.0" text="34" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </TitledPane>
+            <Button fx:id="ButtonTilbakeBloggen" layoutX="456.0" layoutY="37.0" mnemonicParsing="false" text="Tilbake">
+               <font>
+                  <Font name="Bauhaus 93" size="11.0" />
+               </font>
+            </Button>
+            <Button fx:id="ButtonLoggUTBloggen" layoutX="519.0" layoutY="37.0" mnemonicParsing="false" text="Logg ut">
+               <font>
+                  <Font name="Bauhaus 93" size="11.0" />
+               </font>
+            </Button>
+            <Label fx:id="LabelStudentmailBloggen" layoutX="56.0" layoutY="19.0" text="liv@student.uia.no">
+               <font>
+                  <Font name="Bauhaus 93" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="LabelPersonifiserBloggen" layoutX="438.0" layoutY="207.0" text="Personifiser">
+               <font>
+                  <Font name="Bauhaus 93" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="LabelLærerMailBloggen" layoutX="69.0" layoutY="367.0" text="Lærerhjelp: Even@uia.no.  Hallgeir@uia.no  Hjelpelærere: Robin@uia.no  Merete@uia.no" />
+            <TextArea fx:id="TextAreaPersonifiserBloggen" layoutX="407.0" layoutY="225.0" prefHeight="127.0" prefWidth="169.0" text="Kjønn: Kvinne&#10;Alder: 30&#10;Sivilstatus: to nydelig barn&#10;Utdannelse/Yrke: Danser&#10;Hobby: Dans og design" />
+            <Button fx:id="ButtonUke36Bloggen" layoutX="291.0" layoutY="158.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="51.0" text="Uke36">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Button>
+            <Button fx:id="ButtonUke37Bloggen" layoutX="342.0" layoutY="158.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="51.0" text="Uke37">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Button>
+            <Button fx:id="ButtonUke38Bloggen" layoutX="291.0" layoutY="182.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="51.0" text="Uke38">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Button>
+            <Button fx:id="ButtonUke39Bloggen" layoutX="342.0" layoutY="182.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="51.0" text="Uke39">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Button>
+            <Button fx:id="ButtonUke40Bloggen" layoutX="291.0" layoutY="204.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="51.0" text="Uke40">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Button>
+            <Button fx:id="ButtonUke41Bloggen" layoutX="342.0" layoutY="204.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="51.0" text="Uke41">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Button>
+            <Button fx:id="ButtonUke42Bloggen" layoutX="291.0" layoutY="227.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="51.0" text="Uke42">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Button>
+            <Button fx:id="ButtonUke43Bloggen" layoutX="342.0" layoutY="227.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="51.0" text="Uke43">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Button>
+            <Button fx:id="ButtonUke44Bloggen" layoutX="291.0" layoutY="251.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="51.0" text="Uke44">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Button>
+            <Button fx:id="ButtonUke45Bloggen" layoutX="342.0" layoutY="251.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="51.0" text="Uke45">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Button>
+            <Button fx:id="ButtonUke46Bloggen" layoutX="291.0" layoutY="275.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="51.0" text="Uke46">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Button>
+            <Button fx:id="ButtonUke47Bloggen" layoutX="342.0" layoutY="275.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="51.0" text="Uke47">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Button>
+            <Button fx:id="ButtonUke48Bloggen" layoutX="291.0" layoutY="299.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="51.0" text="Uke48">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Button>
+            <Button fx:id="ButtonUke49Bloggen" layoutX="342.0" layoutY="299.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="51.0" text="Uke49">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Button>
+            <Button fx:id="ButtonUke50Bloggen" layoutX="291.0" layoutY="323.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="51.0" text="Uke50">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Button>
+            <Button fx:id="ButtonUke51Bloggen" layoutX="342.0" layoutY="323.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="51.0" text="Uke51">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Button>
+            <Button fx:id="ButtonUke34Bloggen" layoutX="291.0" layoutY="134.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="51.0" text="Uke34">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Button>
+            <Button fx:id="ButtonUke35Bloggen" layoutX="342.0" layoutY="134.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="51.0" text="Uke35">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+   </children>
+</Pane>
