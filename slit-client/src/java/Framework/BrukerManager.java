@@ -51,4 +51,8 @@ public class BrukerManager {
     public BrukerDataModel brukerLogin(String email, String password){
         return this.lookupBrukerSessionBeanRemote().brukerLogin(email, password);
     }
+    public void newBruker(BrukerDataModel bdm){
+        this.lookupBrukerSessionBeanRemote().newBruker(bdm);
+    }
+            
 }

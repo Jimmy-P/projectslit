@@ -19,6 +19,8 @@ public interface BrukerSessionBeanRemote {
     
     BrukerDataModel brukerLogin(String epost, String passord);
     
+    public void newBruker(BrukerDataModel bdm);
+    
     /*
     String getBrukerFNavnFromId(int bId);
     

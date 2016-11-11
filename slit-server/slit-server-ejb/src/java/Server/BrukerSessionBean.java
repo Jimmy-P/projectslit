@@ -45,6 +45,19 @@ public class BrukerSessionBean implements BrukerSessionBeanRemote {
         return brukerDM;
     }
     
+    private Bruker convertBrukerDataModel(BrukerDataModel bdm){
+        
+        Bruker bruker = new Bruker();
+        bruker.setBFnavn(bdm.getbFnavn());
+        bruker.setBEnavn(bdm.getbEnavn());
+        bruker.setBEmail(bdm.getbEmail());
+        bruker.setBPassord(bdm.getbPassord());
+        bruker.setBType(bdm.getbType());
+        
+        return bruker;
+        
+    }
+    
     public void persist(Object object) {
         em.persist(object);
     }  
@@ -75,7 +88,17 @@ public class BrukerSessionBean implements BrukerSessionBeanRemote {
         System.out.println("Etter Query: " + loginModel.getbPassord());
         return loginModel;
     }
-
+    
+    
+    public void newBruker(BrukerDataModel bdm)
+    {
+        
+        Bruker newB = convertBrukerDataModel(bdm);
+ 
+        em.persist(newB);
+    }
+    
+  
     /*
     @Override
     public String getBrukerFNavnFromId(int bId) {

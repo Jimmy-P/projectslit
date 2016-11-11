@@ -7,6 +7,8 @@ package GUI;
  */
 
 
+import DataModel.BrukerDataModel;
+import Framework.BrukerManager;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -18,6 +20,7 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 
 
+
 /**
  * FXML Controller class
  *
@@ -25,10 +28,7 @@ import javafx.scene.control.TextField;
  */
 public class AddUserFormController implements Initializable {
     
-    //ToggleGroup group = new ToggleGroup();
     
-    
-
     @FXML
     private TextField textFName;
     @FXML
@@ -55,7 +55,8 @@ public class AddUserFormController implements Initializable {
     private Button newUserBtn;
     @FXML
     private Button cancelBtn;
-
+    
+    BrukerManager bm = new BrukerManager();
     /**
      * Initializes the controller class.
      */
@@ -70,9 +71,41 @@ public class AddUserFormController implements Initializable {
         String lName = textLName.getText();
         String eMail = textEmail.getText();
         String password = textPassword.getText();
+        int type = 0;
+        if (radioButL.isSelected())
+        {type = 3;}
+        if(radioButHL.isSelected())
+        {type = 2;}
+        if (radioButS.isSelected())
+        {type = 1;}
+       if (!radioButS.isSelected() && !radioButHL.isSelected() && !radioButL.isSelected())
+       {
+           formNotFilled("brukertype"); return;
+       }
+       if (fName.isEmpty())
+        {formNotFilled("fornavn");return;}
+        if (lName.isEmpty())
+        {formNotFilled("etternavn");return;}
+        if (eMail.isEmpty())
+        {formNotFilled("e-mail");return;}
+        if (password.isEmpty())
+        {formNotFilled("passord"); return;}
         
+        if (type != 0 && !fName.isEmpty() && !lName.isEmpty() && !eMail.isEmpty() && !password.isEmpty())
+        {
+        BrukerDataModel bdm = new BrukerDataModel();
+        bdm.setbFnavn(fName);
+        bdm.setbEnavn(lName);
+        bdm.setbEmail(eMail);
+        bdm.setbPassord(password);
+        bdm.setbType(type);
+                
+        bm.newBruker(bdm);
+        }
+         
         
-    }
+       
+        }
 
     @FXML
     private void cancelEvent(ActionEvent event) {
@@ -92,7 +125,12 @@ public class AddUserFormController implements Initializable {
         radioButHL.setSelected(false);
         radioButL.setSelected(false);
     }
+    private void formNotFilled(String missingValue)
+    {
+        System.out.println("Du må velge "+missingValue);
+    }
+}
 
     
     
-}
+
