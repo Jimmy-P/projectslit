@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<SplitPane dividerPositions="0.135678391959799" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.TeacherMenuDatabaseController">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="47.0" prefWidth="600.0">
+         <children>
+            <Button fx:id="buttonRK" layoutY="-3.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="120.0" text="Rettingskø" />
+            <Button fx:id="buttonSO" layoutX="120.0" layoutY="-3.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="120.0" text="Studentoversikt" />
+            <Button fx:id="buttonLTB" layoutX="240.0" layoutY="-3.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="120.0" text="Legg til bruker" />
+            <Button fx:id="buttonMO" layoutX="360.0" layoutY="-3.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="120.0" text="Moduloversikt" />
+            <Button fx:id="buttonDB" layoutX="480.0" layoutY="-3.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="120.0" text="Database" />
+         </children></AnchorPane>
+      <Pane prefHeight="387.0" prefWidth="588.0">
+         <children>
+            <TableView fx:id="MainTableView" layoutX="2.0" layoutY="-1.0" prefHeight="375.0" prefWidth="598.0">
+               <columns>
+                  <TableColumn fx:id="TabellDato" minWidth="0.0" prefWidth="315.0" text="Bruker" />
+                  <TableColumn fx:id="TabellDato1" minWidth="0.0" prefWidth="122.0" text="Modul" />
+                  <TableColumn fx:id="TabellDato11" minWidth="0.0" prefWidth="124.0" text="Dato" />
+               </columns>
+            </TableView>
+         </children>
+      </Pane>
+  </items>
+</SplitPane>
