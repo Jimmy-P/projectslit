@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitMenuButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="369.0" prefWidth="592.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane layoutX="1.0" layoutY="-22.0" prefHeight="389.0" prefWidth="590.0" style="-fx-background-color: lightblue;">
+         <children>
+            <Button fx:id="ButtonLukk" layoutX="537.0" layoutY="35.0" mnemonicParsing="false" text="Lukk" />
+            <Button fx:id="ButtonLoggut" layoutX="471.0" layoutY="35.0" mnemonicParsing="false" text="Logg ut" />
+            <Text fx:id="TextLærerProfil" layoutX="14.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lærer Profil" wrappingWidth="117.052734375">
+               <font>
+                  <Font name="Bauhaus 93" size="23.0" />
+               </font>
+            </Text>
+            <Text fx:id="TextBruker" fill="#544d4c" layoutX="50.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bruker : " />
+            <TabPane fx:id="TabPane" layoutX="3.0" layoutY="123.0" prefHeight="233.0" prefWidth="575.0" tabClosingPolicy="UNAVAILABLE">
+               <tabs>
+                  <Tab fx:id="TabStudentStatus" text="Student Status">
+                     <content>
+                        <ScrollPane fx:id="ScrollPane" prefHeight="210.0" prefWidth="543.0">
+                           <content>
+                              <TableView fx:id="TableView" prefHeight="216.0" prefWidth="581.0">
+                                 <columns>
+                                    <TableColumn fx:id="TableColumnNavn" prefWidth="161.0" text="Navn" />
+                                    <TableColumn fx:id="TableColumnMailadresse" prefWidth="180.0" text="Mailadresse" />
+                                    <TableColumn fx:id="TableColumnBlogg" prefWidth="222.0" text="Blogg" />
+                                 </columns>
+                              </TableView>
+                           </content>
+                        </ScrollPane>
+                     </content>
+                  </Tab>
+                  <Tab fx:id="TabModuler" text="Moduler">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="204.0" prefWidth="592.0">
+                                 <children>
+                                    <ButtonBar layoutX="14.0" layoutY="47.0" prefHeight="25.0" prefWidth="518.0">
+                                       <buttons>
+                                          <Button fx:id="Button_1" minWidth="55.0" mnemonicParsing="false" prefHeight="11.0" text="1" />
+                                          <Button fx:id="Button_2" layoutX="510.0" layoutY="10.0" minWidth="55.0" mnemonicParsing="false" prefHeight="11.0" text="2" />
+                                          <Button fx:id="Button_3" layoutX="425.0" layoutY="10.0" minWidth="55.0" mnemonicParsing="false" prefHeight="11.0" text="3" />
+                                          <Button fx:id="Button_4" layoutX="340.0" layoutY="10.0" minWidth="55.0" mnemonicParsing="false" prefHeight="11.0" text="4" />
+                                          <Button fx:id="Button_5" layoutX="255.0" layoutY="10.0" minWidth="55.0" mnemonicParsing="false" prefHeight="11.0" text="5" />
+                                          <Button fx:id="Button_6" layoutX="170.0" layoutY="10.0" minWidth="55.0" mnemonicParsing="false" prefHeight="11.0" text="6" />
+                                       </buttons>
+                                    </ButtonBar>
+                                    <ButtonBar layoutX="14.0" layoutY="102.0" prefHeight="25.0" prefWidth="518.0">
+                                       <buttons>
+                                          <Button fx:id="Button_7" minWidth="55.0" mnemonicParsing="false" prefHeight="11.0" text="7" />
+                                          <Button fx:id="Button_8" layoutX="510.0" layoutY="10.0" minWidth="55.0" mnemonicParsing="false" prefHeight="11.0" text="8" />
+                                          <Button fx:id="Button_9" layoutX="425.0" layoutY="10.0" minWidth="55.0" mnemonicParsing="false" prefHeight="11.0" text="9" />
+                                          <Button fx:id="Button_10" layoutX="340.0" layoutY="10.0" minWidth="55.0" mnemonicParsing="false" prefHeight="11.0" text="10" />
+                                          <Button fx:id="Button_11" layoutX="255.0" layoutY="10.0" minWidth="55.0" mnemonicParsing="false" prefHeight="11.0" text="11" />
+                                          <Button fx:id="Button_12" layoutX="170.0" layoutY="10.0" minWidth="55.0" mnemonicParsing="false" prefHeight="11.0" text="12" />
+                                       </buttons>
+                                    </ButtonBar>
+                                    <ButtonBar layoutX="14.0" layoutY="154.0" prefHeight="25.0" prefWidth="164.0">
+                                       <buttons>
+                                          <Button fx:id="Button_13" layoutX="255.0" layoutY="10.0" minWidth="55.0" mnemonicParsing="false" prefHeight="11.0" text="13" />
+                                          <Button fx:id="Button_14" layoutX="340.0" layoutY="10.0" minWidth="55.0" mnemonicParsing="false" prefHeight="11.0" text="14" />
+                                       </buttons>
+                                    </ButtonBar>
+                                    <Text fx:id="TextModuloversikt" layoutX="39.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Moduloversikt">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Text>
+                                    <SplitMenuButton fx:id="SplitMenuButtonRedigerModul" layoutX="385.0" layoutY="154.0" mnemonicParsing="false" text="Rediger Modul">
+                                       <items>
+                                          <MenuItem mnemonicParsing="false" text="Action 1" />
+                                          <MenuItem mnemonicParsing="false" text="Action 2" />
+                                       </items>
+                                    </SplitMenuButton>
+                                    <Button fx:id="ButtonOK" layoutX="504.0" layoutY="154.0" mnemonicParsing="false" text="OK" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab fx:id="TabRettingskø" text="Rettingskø">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="229.0" prefWidth="570.0">
+                           <children>
+                              <ScrollPane layoutX="6.0" layoutY="2.0" prefHeight="200.0" prefWidth="567.0">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
+                                       <children>
+                                          <TableView fx:id="Tableview" prefHeight="200.0" prefWidth="566.0">
+                                            <columns>
+                                              <TableColumn fx:id="TableColumnNavn" prefWidth="75.0" text="Navn" />
+                                              <TableColumn fx:id="TableColumn_001" prefWidth="38.0" text="001" />
+                                                <TableColumn fx:id="TableColumn_002" prefWidth="30.0" text="002" />
+                                                <TableColumn fx:id="TableColumn_003" prefWidth="35.0" text="003" />
+                                                <TableColumn fx:id="TableColumn_004" prefWidth="31.0" text="004" />
+                                                <TableColumn fx:id="TableColumn_005" prefWidth="32.0" text="005" />
+                                                <TableColumn fx:id="TableColumn_006" prefWidth="30.0" text="006" />
+                                                <TableColumn fx:id="TableColumn007" prefWidth="30.0" text="007" />
+                                                <TableColumn fx:id="TableColumn_008" prefWidth="31.0" text="008" />
+                                                <TableColumn fx:id="TableColumn009" prefWidth="35.0" text="009" />
+                                                <TableColumn fx:id="TableColumn010" prefWidth="39.0" text="010" />
+                                                <TableColumn fx:id="TableColumn_011" prefWidth="35.0" text="011" />
+                                                <TableColumn fx:id="TableColumn_012" prefWidth="41.0" text="012" />
+                                                <TableColumn fx:id="TableColumn_013" prefWidth="34.0" text="013" />
+                                                <TableColumn fx:id="TableColumn_014" prefWidth="37.0" text="014" />
+                                            </columns>
+                                          </TableView>
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                              </ScrollPane>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab text="Statestikk">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                     </content>
+                  </Tab>
+                  <Tab text="Innstillinger">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Pane fx:id="Pane" layoutX="7.0" prefHeight="200.0" prefWidth="568.0">
+                                 <children>
+                                    <PasswordField fx:id="PasswordField" layoutX="39.0" layoutY="75.0" />
+                                    <PasswordField fx:id="PasswordField" layoutX="39.0" layoutY="135.0" />
+                                    <Text fx:id="TextEndrePassord" layoutX="39.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Endre Passord">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fx:id="TextGammeltPassord" layoutX="39.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gammelt Passord" />
+                                    <Text fx:id="TextNyttPassord" layoutX="39.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nytt Passord" />
+                                    <Button fx:id="ButtonBekreft" layoutX="200.0" layoutY="135.0" mnemonicParsing="false" text="Bekreft" />
+                                 </children>
+                              </Pane>
+                           </children></AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab text="Database">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Button fx:id="ButtonGåtilDatabase" layoutX="167.0" layoutY="30.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="207.0" text="Gå til Database" />
+                           </children></AnchorPane>
+                     </content>
+                  </Tab>
+               </tabs>
+            </TabPane>
+            <SplitMenuButton fx:id="SplitMenuButtonRediger" layoutX="448.0" layoutY="94.0" mnemonicParsing="false" text="Rediger...">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Action 1" />
+                <MenuItem mnemonicParsing="false" text="Action 2" />
+              </items>
+            </SplitMenuButton>
+            <Button fx:id="ButtonOK" layoutX="537.0" layoutY="94.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="40.0" text="OK" />
+            <MenuButton fx:id="SplitMenuButtonLeggtil" layoutX="319.0" layoutY="94.0" mnemonicParsing="false" text="Legg til....">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Action 1" />
+                <MenuItem mnemonicParsing="false" text="Action 2" />
+              </items>
+            </MenuButton>
+            <Button fx:id="ButtonOK" layoutX="401.0" layoutY="93.0" mnemonicParsing="false" text="OK" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
