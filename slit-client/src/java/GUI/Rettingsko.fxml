@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="slitclient.MainController">
+   <children>
+      <Pane layoutX="6.0" layoutY="7.0" prefHeight="387.0" prefWidth="588.0">
+         <children>
+            <TableView fx:id="MainTableView" layoutX="10.0" layoutY="8.0" prefHeight="366.0" prefWidth="564.0">
+              <columns>
+                <TableColumn fx:id="TabellDato" minWidth="0.0" prefWidth="315.0" text="Bruker" />
+                  <TableColumn fx:id="TabellDato1" minWidth="0.0" prefWidth="122.0" text="Modul" />
+                  <TableColumn fx:id="TabellDato11" minWidth="0.0" prefWidth="124.0" text="Dato" />
+              </columns>
+            </TableView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
