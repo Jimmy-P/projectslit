@@ -84,17 +84,18 @@ public class TeacherMenuAddUserFormController implements Initializable {
         String fName = textFName.getText();
         String lName = textLName.getText();
         String eMail = textEmail.getText();
-        String password = textPassword.getText();
+        String password = textPassword.getText();  //Disse linjene initialiserer variabel og definerer dem ved å hente tekst fra tekstfelt i GUI
         int type = 0;
         if (radioButL.isSelected())
         {type = 3;}
-        if(radioButHL.isSelected())
-        {type = 2;}
+        if(radioButHL.isSelected())  //Disse if setningene sjekker hvilken radioknapp som er aktiv,
+        {type = 2;}                  //og setter type basert på dette.
         if (radioButS.isSelected())
         {type = 1;}
        if (!radioButS.isSelected() && !radioButHL.isSelected() && !radioButL.isSelected())
        {
-           formNotFilled("brukertype"); return;
+           formNotFilled("brukertype"); return; //Disse if-setningene sjekker om noen av feltene
+           //ikke er utfylt, og i så fall kaller formNotFilled metoden & avbryter createNewUser metoden
        }
        if (fName.isEmpty())
         {formNotFilled("fornavn");return;}
@@ -105,6 +106,11 @@ public class TeacherMenuAddUserFormController implements Initializable {
         if (password.isEmpty())
         {formNotFilled("passord"); return;}
         
+        
+        //Denne if setningen sier at hvis ingen av feltene er tomme, så kalles
+        //clearFields metoden, det opprettes et nytt BrukerDataModel objekt
+        //med variablene som tidligere ble hentet fra tekstfeltene i GUI. Til slutt kalles
+        //en metode i BrukerManager klassen for å legge til ny bruker i tabellen
         if (type != 0 && !fName.isEmpty() && !lName.isEmpty() && !eMail.isEmpty() && !password.isEmpty())
         {
         clearFields();
@@ -156,7 +162,7 @@ public class TeacherMenuAddUserFormController implements Initializable {
     }
     /*
         Denne metoden kalles når bruker ikke har fylt inn alle verdier, med
-        parameter som forteller bruker hvilke verdier som mangler. 
+        parameter som forteller bruker hvilken verdi som mangler. 
     */
     private void formNotFilled(String missingValue)
     {
