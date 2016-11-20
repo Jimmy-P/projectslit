@@ -7,6 +7,7 @@ package GUI;
 
 import DataModel.BrukerDataModel;
 import Framework.BrukerManager;
+import Names.ViewNames;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -181,4 +182,25 @@ public class TeacherMenuAddUserFormController implements Initializable {
         radioButL.setSelected(false);
         radioButS.setSelected(false);
     }
+    
+    @FXML
+    private void buttonRKEvent(ActionEvent event) throws Exception {
+        SceneSelecter.getInstance().setScene(ViewNames.AQView);
+        }
+    @FXML
+    private void buttonMOEvent(ActionEvent event) throws Exception {
+        SceneSelecter.getInstance().setScene(ViewNames.modulView);
+        }
+    @FXML
+    private void buttonDBEvent(ActionEvent event) throws Exception {
+        SceneSelecter.getInstance().setScene(ViewNames.DBView);
+        }
+    @FXML
+    private void buttonLTBEvent(ActionEvent event) throws Exception {
+        SceneSelecter.getInstance().setScene(ViewNames.AUFView);
+        }
+    @FXML
+    private void buttonSOEvent(ActionEvent event) throws Exception {
+        SceneSelecter.getInstance().setScene(ViewNames.modulView);  //DENNE MÅ RETTES NÅR VI HAR EN FXML FOR STUDENTOVERSIKT
+        }
 }

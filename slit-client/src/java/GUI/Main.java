@@ -29,12 +29,15 @@ public class Main extends Application{
     BrukerManager bm = new BrukerManager();
     
     private Stage stage;
-    FXMLLoader loader = new FXMLLoader();
+    //FXMLLoader loader = new FXMLLoader();
     
     @Override
     public void start(Stage stage) throws Exception {
         
-        try {
+        SceneSelecter ss = new SceneSelecter();
+        ss.start(stage);
+        
+        /*try {
         
         Parent root = loader.load(getClass().getResource("Login.fxml"));
         Scene scene = new Scene(root);

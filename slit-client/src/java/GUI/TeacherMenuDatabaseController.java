@@ -5,8 +5,10 @@
  */
 package GUI;
 
+import Names.ViewNames;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -47,5 +49,25 @@ public class TeacherMenuDatabaseController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+       @FXML
+    private void buttonRKEvent(ActionEvent event) throws Exception {
+        SceneSelecter.getInstance().setScene(ViewNames.AQView);
+        }
+    @FXML
+    private void buttonMOEvent(ActionEvent event) throws Exception {
+        SceneSelecter.getInstance().setScene(ViewNames.modulView);
+        }
+    @FXML
+    private void buttonDBEvent(ActionEvent event) throws Exception {
+        SceneSelecter.getInstance().setScene(ViewNames.DBView);
+        }
+    @FXML
+    private void buttonLTBEvent(ActionEvent event) throws Exception {
+        SceneSelecter.getInstance().setScene(ViewNames.AUFView);
+        }
+    @FXML
+    private void buttonSOEvent(ActionEvent event) throws Exception {
+        SceneSelecter.getInstance().setScene(ViewNames.modulView);  //DENNE MÅ RETTES NÅR VI HAR EN FXML FOR STUDENTOVERSIKT
+        }
     
 }

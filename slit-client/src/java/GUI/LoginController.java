@@ -7,6 +7,7 @@ package GUI;
 
 import DataModel.BrukerDataModel;
 import Framework.BrukerManager;
+import Names.ViewNames;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -55,11 +56,21 @@ public class LoginController implements Initializable {
             
             if(bdm.getbEmail() != null && bdm.getbPassord() != null)
             {
-                this.statusLabel.setText("Du er logget inn som " + 
-                        bdm.getbFnavn() + " " + bdm.getbEnavn());
+                //this.statusLabel.setText("Du er logget inn som " + 
+                  //      bdm.getbFnavn() + " " + bdm.getbEnavn());
                 
-                this.loginID = bdm.getbId();
-                System.out.println(loginID);
+                try
+                {                //HER MÅ DET INN EN IF-SETNING SOM SENDER BRUKER VIDERE TIL RIKTIG MENY BASERT PÅ BRUKERTYPE
+                
+                    SceneSelecter.getInstance().setScene(ViewNames.modulView);
+                    
+                }
+                catch(Exception e)
+                {
+                    this.statusLabel.setText(e.getMessage());
+                }
+                //this.loginID = bdm.getbId();
+                //System.out.println(loginID);
                 
                 /*try {
                      this.statusLabel.setText("Du er logget inn");

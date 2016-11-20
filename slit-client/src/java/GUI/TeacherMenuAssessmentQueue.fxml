@@ -11,11 +11,11 @@
   <items>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="47.0" prefWidth="600.0">
          <children>
-            <Button fx:id="buttonRK" layoutY="-3.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="120.0" text="Rettingskø" />
-            <Button fx:id="buttonSO" layoutX="120.0" layoutY="-3.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="120.0" text="Studentoversikt" />
-            <Button fx:id="buttonLTB" layoutX="240.0" layoutY="-3.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="120.0" text="Legg til bruker" />
-            <Button fx:id="buttonMO" layoutX="360.0" layoutY="-3.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="120.0" text="Moduloversikt" />
-            <Button fx:id="buttonDB" layoutX="480.0" layoutY="-3.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="120.0" text="Database" />
+            <Button fx:id="buttonRK" layoutY="-3.0" mnemonicParsing="false" onAction="#buttonRKEvent" prefHeight="54.0" prefWidth="120.0" text="Rettingskø" />
+            <Button fx:id="buttonSO" layoutX="120.0" layoutY="-3.0" mnemonicParsing="false" onAction="#buttonSOEvent" prefHeight="54.0" prefWidth="120.0" text="Studentoversikt" />
+            <Button fx:id="buttonLTB" layoutX="240.0" layoutY="-3.0" mnemonicParsing="false" onAction="#buttonLTBEvent" prefHeight="54.0" prefWidth="120.0" text="Legg til bruker" />
+            <Button fx:id="buttonMO" layoutX="360.0" layoutY="-3.0" mnemonicParsing="false" onAction="#buttonMOEvent" prefHeight="54.0" prefWidth="120.0" text="Moduloversikt" />
+            <Button fx:id="buttonDB" layoutX="480.0" layoutY="-3.0" mnemonicParsing="false" onAction="#buttonDBEvent" prefHeight="54.0" prefWidth="120.0" text="Database" />
          </children></AnchorPane>
       <Pane prefHeight="387.0" prefWidth="588.0">
          <children>
