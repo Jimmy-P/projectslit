@@ -19,7 +19,11 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 /**
- *
+ * Inneholder "business logic" til metoder som kjøres fra klienten via
+ * et interface.
+ * 
+ * Da dette er en stateless session bean lagrer den ikke noe informasjonen
+ * om modulbesvarelsene etter metodekallet er gjennomført.
  * @author bevo
  */
 @Stateless

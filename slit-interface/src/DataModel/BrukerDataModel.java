@@ -6,10 +6,17 @@
 package DataModel;
 
 /**
- *
+ * Denne klassen behandler objekter av brukerklassen som sendes frem og tilbake
+ * mellom klienten og serveren. Dette muliggjøres ved bruk av POJO objekter.
+ * Disse objektene behøver ikke en referanse til klassen den kommer fra
+ * og kan derfor lettere hentes og benyttes mellom en klient og en server.
  * @author Adam
  */
+
+
 public class BrukerDataModel implements java.io.Serializable {
+   
+  
    private int bId;
    private String bFnavn;
    private String bEnavn;
@@ -17,7 +24,10 @@ public class BrukerDataModel implements java.io.Serializable {
    private String bPassord;
    private int bType;
    
-
+    /**
+     * Returner brukerens ID (Primærnøkkel)
+     * @return bId
+     */
     public int getbId() {
         return bId;
     }

@@ -14,7 +14,15 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
 /**
- *
+ * Denne klassen bruker en JNDI (Java Naming and Directory Interface) lookup 
+ * for å tillate klassen å kalle metoder på en remote EJB. Først sjekker den 
+ * om metoden eksisterer i fellesbiblioteket. Stemmer det gjennomføres det 
+ * en lookup til SessionBean på serversiden (Slik jeg forstår JNDI).
+ * 
+ * Hvis denne lookupen går igjennom i et av metodekallene sendes informasjonen
+ * over til serveren der paramaterene brukes til å kjøre metodene på serversiden
+ * der det befinner seg business-logic til metoden.
+ * 
  * @author Adam
  */
 public class BrukerManager {
@@ -45,12 +53,32 @@ public class BrukerManager {
     }
     */
     
+    /**
+     * Henter ut en bruker fra databasen med en gitt primarnøkkel som parameter.
+     * Vil hovedsaklig brukes til testing da det ikke er hensiktsmessig for
+     * brukeren å gjøre spørringer på en primærnøkkel.
+     * @param id
+     * @return 
+     */
     public BrukerDataModel getBrukerFromId(int id) {
         return this.lookupBrukerSessionBeanRemote().getBrukerFromBId(id);
     }
+    /**
+     * Sender login-informasjon til serveren. Serveren gjennomfører så en
+     * spørring på databasen for å sjekke om informasjonen er korrekt.
+     * @param email
+     * @param password
+     * @return 
+     */
     public BrukerDataModel brukerLogin(String email, String password){
         return this.lookupBrukerSessionBeanRemote().brukerLogin(email, password);
     }
+    
+    /**
+     * Bruker en constructor hentet fra fellesbiblioteket
+     * til å generere et POJO(objekt) av Bruker som videresendes til server.
+     * @param bdm 
+     */
     public void newBruker(BrukerDataModel bdm){
         this.lookupBrukerSessionBeanRemote().newBruker(bdm);
     }

@@ -9,13 +9,22 @@ import DataModel.BrukerDataModel;
 import javax.ejb.Remote;
 
 /**
- *
+ * Denne klassen er et interface som bestemmer hvilke metoder med gitte 
+ * paramatere som kan kalles fra klienten.
  * @author Adam
  */
+
+
 @Remote
 public interface BrukerSessionBeanRemote {
-    
+
+    /**
+     * 
+     * @param id (brukerens primærnøkkel)
+     * @return brukerPOJO
+     */  
     BrukerDataModel getBrukerFromBId(int id);
+    
     
     BrukerDataModel brukerLogin(String epost, String passord);
     

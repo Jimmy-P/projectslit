@@ -21,7 +21,8 @@ import javafx.scene.input.MouseEvent;
 
 /**
  * FXML Controller class
- *
+ * Autogenerert klasse basert på login.fxml sitt objekthierarki.
+ * 
  * @author Adam
  */
 public class LoginController implements Initializable {

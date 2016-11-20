@@ -13,7 +13,11 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 /**
- *
+ * Inneholder "business logic" til metoder som kjøres fra klienten via
+ * et interface.
+ * 
+ * Da dette er en stateless session bean lagrer den ikke noe informasjonen
+ * om brukeren etter metodekallet er gjennomført.
  * @author Adam
  */
 @Stateless
@@ -84,8 +88,10 @@ public class BrukerSessionBean implements BrukerSessionBeanRemote {
         catch(Exception e){
             e.printStackTrace();
         }
+        //Brukes til testing
         System.out.println("Etter Query: " + loginModel.getbEmail());
         System.out.println("Etter Query: " + loginModel.getbPassord());
+        
         return loginModel;
     }
     

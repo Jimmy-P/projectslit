@@ -13,7 +13,14 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
 /**
- *
+ * Denne klassen bruker en JNDI (Java Naming and Directory Interface) lookup 
+ * for å tillate klassen å kalle metoder på en remote EJB. Først sjekker den 
+ * om metoden eksisterer i fellesbiblioteket. Stemmer det gjennomføres det 
+ * en lookup til SessionBean på serversiden (Slik jeg forstår JNDI).
+ * 
+ * Hvis denne lookupen går igjennom i et av metodekallene sendes informasjonen
+ * over til serveren der paramaterene brukes til å kjøre metodene på serversiden
+ * der det befinner seg business-logic til metoden.
  * @author bevo
  */
 public class ModulManager {

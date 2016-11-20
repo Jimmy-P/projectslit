@@ -10,7 +10,8 @@ import java.util.List;
 import javax.ejb.Remote;
 
 /**
- *
+ * Denne klassen er et interface som bestemmer hvilke metoder med gitte 
+ * paramatere som kan kalles fra klienten.
  * @author bevo
  */
 @Remote

@@ -24,7 +24,14 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
 /**
- *
+ * Denne klassen sender spørringer mot databasen vår (MySQL) ved hjelp av
+ * connectorJ som oversetter spørringen vi sender i Java/JDBC 
+ * (fra Payaraserveren) til MySQL. Det brukes også motsatt vei til å
+ * oversette fra MySQL til JDBC slik at klassen kan motta informasjon
+ * i respons av spørringene.
+ * 
+ * Mesteparten av klassen er autogenerert ved hjelp av ConnectorJ og Payara ved 
+ * bruk av en connection pool til å lese tabellene i databasen vår.
  * @author bevo
  */
 @Entity
