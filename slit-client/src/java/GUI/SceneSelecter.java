@@ -37,7 +37,8 @@ public class SceneSelecter extends Application {
             put(ViewNames.modulView, "TeacherMenuModuloversikt.fxml"); 
             put(ViewNames.DBView, "TeacherMenuDatabase.fxml"); 
             put(ViewNames.AUFView, "TeacherMenuAddUserForm.fxml"); 
-            put(ViewNames.AQView, "TeacherMenuAssessmentQueue.fxml"); 
+            put(ViewNames.AQView, "TeacherMenuAssessmentQueue.fxml");
+            put(ViewNames.studentView, "StudentStatusStudent.fxml"); 
         }
         
     }; 

@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.StudentStatusStudentController">
    <children>
       <Pane fx:id="PaneBakgrunnSss" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
          <children>
@@ -28,7 +28,7 @@
                   <Font name="Bauhaus 93" size="11.0" />
                </font>
             </Button>
-            <Button fx:id="ButtonLoggUtsss" layoutX="447.0" layoutY="25.0" mnemonicParsing="false" text="Logg ut">
+            <Button fx:id="ButtonLoggUtsss" layoutX="447.0" layoutY="25.0" mnemonicParsing="false" onAction="#logOut" text="Logg ut">
                <font>
                   <Font name="Bauhaus 93" size="11.0" />
                </font>

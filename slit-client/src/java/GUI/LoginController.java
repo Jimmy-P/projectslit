@@ -74,16 +74,9 @@ public class LoginController implements Initializable {
              */
             if(bdm.getbEmail() != null && bdm.getbPassord() != null)
             {
-                //this.statusLabel.setText("Du er logget inn som " + 
-                  //      bdm.getbFnavn() + " " + bdm.getbEnavn());
-                //
-                
-                /**
-                 * Returnerer spørringen en verdi for begge paramtere
-                 * så prøv følgende...
-                 */
+                if (bdm.getbType() == 2 || bdm.getbType() == 3){
                 try
-                {                //HER MÅ DET INN EN IF-SETNING SOM SENDER BRUKER VIDERE TIL RIKTIG MENY BASERT PÅ BRUKERTYPE
+                {                
                 
                     SceneSelecter.getInstance().setScene(ViewNames.modulView);
                     
@@ -91,6 +84,21 @@ public class LoginController implements Initializable {
                 catch(Exception e)
                 {
                     this.statusLabel.setText(e.getMessage());
+                }
+                }
+                else if (bdm.getbType() == 1)
+                {
+                  try
+                {                
+                
+                    SceneSelecter.getInstance().setScene(ViewNames.studentView);
+                    
+                }
+                catch(Exception e)
+                {
+                    this.statusLabel.setText(e.getMessage());
+                }   
+                    
                 }
                 //this.loginID = bdm.getbId();
                 //System.out.println(loginID);
