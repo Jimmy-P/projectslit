@@ -22,6 +22,10 @@ import javafx.scene.input.MouseEvent;
 /**
  * FXML Controller class
  * Autogenerert klasse basert på login.fxml sitt objekthierarki.
+ * Denne klassen instansierer elementene som skal være med i GUI. Informasjon
+ * om hvor disse skal plasseres i GUI etc ligger i login.fxml. Hvordan
+ * disse kommuniserer sammen tør jeg ikke si men jeg antar det har noe med
+ * metoden "initalize" å gjøre.
  * 
  * @author Adam
  */
@@ -37,6 +41,7 @@ public class LoginController implements Initializable {
     private int loginID;
     
     BrukerManager bm = new BrukerManager();
+    
     /**
      * Initializes the controller class.
      */
@@ -49,17 +54,34 @@ public class LoginController implements Initializable {
     @FXML
     private void onPress(ActionEvent event) {
         
+        /**
+         * IF: Hvis felt for e-post eller passord er tomme...
+         */
         if(!this.passordField.getText().isEmpty() && 
                 !this.epostField.getText().isEmpty())
         {
+           /**
+            * Kjøret metode fra BrukerManager (lookup fra BrukerDataModel i 
+            * fellesbiblioteket) som tar brukerens input og sender til
+            * server som bruker paramterene i metoden til å utføre en spørring på DB.
+            */
             BrukerDataModel bdm = bm.brukerLogin(this.epostField.getText(), 
                     this.passordField.getText());
             
+            /**
+             * IF: Hvis spørring etter brukerdetaljene på serveren ikke
+             * returnerer noen verdi...
+             */
             if(bdm.getbEmail() != null && bdm.getbPassord() != null)
             {
                 //this.statusLabel.setText("Du er logget inn som " + 
                   //      bdm.getbFnavn() + " " + bdm.getbEnavn());
+                //
                 
+                /**
+                 * Returnerer spørringen en verdi for begge paramtere
+                 * så prøv følgende...
+                 */
                 try
                 {                //HER MÅ DET INN EN IF-SETNING SOM SENDER BRUKER VIDERE TIL RIKTIG MENY BASERT PÅ BRUKERTYPE
                 

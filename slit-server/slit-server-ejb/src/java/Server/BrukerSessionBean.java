@@ -13,11 +13,17 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 /**
- * Inneholder "business logic" til metoder som kjøres fra klienten via
- * et interface.
+ * Inneholder "business logic" til metoder relatert
+ * til brukere i datamodellen som kjøres fra klienten via et interface.
  * 
- * Da dette er en stateless session bean lagrer den ikke noe informasjonen
- * om brukeren etter metodekallet er gjennomført.
+ * Klassen lagrer informasjon i databasen ved
+ * å bruke EntityManager.persist til å gjennomføre spørringer i
+ * brukerklassen i package Database. Det har noe med "persistence context"
+ * å gjøre. Jeg vet ikke riktig helt hvordan dette fungerer.
+ * 
+ * Da dette er en stateless session bean har den ikke en aktiv kobling
+ * mot noe klient. De kjører med andre ord uavhengig av hverandre
+ * før det gjennomføres en spørring fra klienten.
  * @author Adam
  */
 @Stateless

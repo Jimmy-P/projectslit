@@ -10,6 +10,7 @@ package DataModel;
  * mellom klienten og serveren. Dette muliggjøres ved bruk av POJO objekter.
  * Disse objektene behøver ikke en referanse til klassen den kommer fra
  * og kan derfor lettere hentes og benyttes mellom en klient og en server.
+ * (Jeg tror det er sånn det fungerer. Ikke siter meg på dette!)
  * @author Adam
  */
 
