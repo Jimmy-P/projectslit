@@ -1,28 +1,22 @@
+package GUI;
+
+import Names.ViewNames;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package GUI;
-
-import Names.ViewNames;
-import java.net.URL;
-import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
 
 /**
- * FXML Controller class
  *
- * @author Jimmy
+ * @author Maria
  */
-public class TeacherMenuDatabaseController implements Initializable {
-
+public class TeacherMenuStudentoversiktController {
+    
     @FXML
     private Button buttonRK;
     @FXML
@@ -33,23 +27,9 @@ public class TeacherMenuDatabaseController implements Initializable {
     private Button buttonMO;
     @FXML
     private Button buttonDB;
+    
+    
     @FXML
-    private Label LabelDatabaseDB;
-    @FXML
-    private Button ButtonImportDB;
-    @FXML
-    private Button ButtonEksportDB;
-    @FXML
-    private Button ButtonLoggUtDB;
-
-    /**
-     * Initializes the controller class.
-     */
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
-       @FXML
     private void buttonRKEvent(ActionEvent event) throws Exception {
         SceneSelecter.getInstance().setScene(ViewNames.AQView);
         }
@@ -69,5 +49,4 @@ public class TeacherMenuDatabaseController implements Initializable {
     private void buttonSOEvent(ActionEvent event) throws Exception {
         SceneSelecter.getInstance().setScene(ViewNames.modulView);  //DENNE MÅ RETTES NÅR VI HAR EN FXML FOR STUDENTOVERSIKT
         }
-    
 }

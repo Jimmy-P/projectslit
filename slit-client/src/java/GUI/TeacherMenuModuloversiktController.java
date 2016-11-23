@@ -167,6 +167,6 @@ public class TeacherMenuModuloversiktController implements Initializable {
         }
     @FXML
     private void buttonSOEvent(ActionEvent event) throws Exception {
-        SceneSelecter.getInstance().setScene(ViewNames.modulView);  //DENNE MÅ RETTES NÅR VI HAR EN FXML FOR STUDENTOVERSIKT
+        SceneSelecter.getInstance().setScene(ViewNames.SOView);
         }
 }

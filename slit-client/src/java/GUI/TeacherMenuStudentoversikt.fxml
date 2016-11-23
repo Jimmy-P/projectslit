@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<SplitPane dividerPositions="0.12562814070351758" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.TeacherMenuStudentoversiktController">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="47.0" prefWidth="600.0">
+         <children>
+            <Button fx:id="buttonRK" layoutY="-3.0" mnemonicParsing="false" onAction="#buttonRKEvent" prefHeight="54.0" prefWidth="120.0" text="Rettingskø" />
+            <Button fx:id="buttonSO" layoutX="120.0" layoutY="-3.0" mnemonicParsing="false" onAction="#buttonSOEvent" prefHeight="54.0" prefWidth="120.0" text="Studentoversikt" />
+            <Button fx:id="buttonLTB" layoutX="240.0" layoutY="-3.0" mnemonicParsing="false" onAction="#buttonLTBEvent" prefHeight="54.0" prefWidth="120.0" text="Legg til bruker" />
+            <Button fx:id="buttonMO" layoutX="360.0" layoutY="-3.0" mnemonicParsing="false" onAction="#buttonMOEvent" prefHeight="54.0" prefWidth="120.0" text="Moduloversikt" />
+            <Button fx:id="buttonDB" layoutX="480.0" layoutY="-3.0" mnemonicParsing="false" onAction="#buttonDBEvent" prefHeight="54.0" prefWidth="120.0" text="Database" />
+         </children></AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+         <children>
+            <Label fx:id="LabelDatabaseDB" layoutX="201.0" layoutY="46.0" text="Database">
+               <font>
+                  <Font name="Bauhaus 93" size="48.0" />
+               </font>
+            </Label>
+            <Button fx:id="ButtonImportDB" layoutX="56.0" layoutY="138.0" mnemonicParsing="false" prefHeight="69.0" prefWidth="208.0" text="Importer Database">
+               <font>
+                  <Font name="Bauhaus 93" size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="ButtonEksportDB" layoutX="318.0" layoutY="138.0" mnemonicParsing="false" prefHeight="69.0" prefWidth="208.0" text="Eksporter Database">
+               <font>
+                  <Font name="Bauhaus 93" size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="ButtonLoggUtDB" layoutX="501.0" layoutY="24.0" mnemonicParsing="false" text="Logg ut">
+               <font>
+                  <Font name="Bauhaus 93" size="11.0" />
+               </font>
+            </Button>
+         </children></AnchorPane>
+  </items>
+</SplitPane>

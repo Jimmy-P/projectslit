@@ -22,6 +22,8 @@ public class ViewNames {
     public static final String AQView = "TeacherMenuAssessmentQueue"; 
     
     public static final String studentView = "StudentStatusStudent"; 
+    
+    public static final String SOView = "TeacherMenuStudentoversikt";
   
     
 }

@@ -39,6 +39,7 @@ public class SceneSelecter extends Application {
             put(ViewNames.AUFView, "TeacherMenuAddUserForm.fxml"); 
             put(ViewNames.AQView, "TeacherMenuAssessmentQueue.fxml");
             put(ViewNames.studentView, "StudentStatusStudent.fxml"); 
+            put(ViewNames.SOView, "TeacherMenuStudentoversikt.fxml");
         }
         
     }; 
