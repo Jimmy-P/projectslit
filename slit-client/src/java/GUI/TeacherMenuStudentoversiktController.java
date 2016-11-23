@@ -47,6 +47,23 @@ public class TeacherMenuStudentoversiktController {
         }
     @FXML
     private void buttonSOEvent(ActionEvent event) throws Exception {
-        SceneSelecter.getInstance().setScene(ViewNames.modulView);  //DENNE MÅ RETTES NÅR VI HAR EN FXML FOR STUDENTOVERSIKT
+        SceneSelecter.getInstance().setScene(ViewNames.SOView);
         }
+    
+    @FXML
+    private TableView<MyDataModel> myTableView;
+
+    @FXML
+    private TableColumn<MyDataModel, String> idColumn;
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+    idColumn.setCellValueFactory(new PropertyValueFactory<MyDataModel, String>"idColumn"));
+
+    myTableView.getItems().setAll(getItemsToAdd());
+}
+
+private List<MyDataModel> getItemsToAdd(){
+// this method would fetch the necessary items from database.
+}
 }
