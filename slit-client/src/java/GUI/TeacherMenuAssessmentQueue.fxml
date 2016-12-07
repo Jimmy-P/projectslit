@@ -21,9 +21,9 @@
          <children>
             <TableView fx:id="MainTableView" layoutX="2.0" layoutY="-1.0" prefHeight="375.0" prefWidth="598.0">
                <columns>
-                  <TableColumn fx:id="TabellDato" minWidth="0.0" prefWidth="315.0" text="Bruker" />
-                  <TableColumn fx:id="TabellDato1" minWidth="0.0" prefWidth="122.0" text="Modul" />
-                  <TableColumn fx:id="TabellDato11" minWidth="0.0" prefWidth="124.0" text="Dato" />
+                  <TableColumn fx:id="TabellBruker" minWidth="0.0" prefWidth="315.0" text="Bruker" />
+                  <TableColumn fx:id="TabellModul" minWidth="0.0" prefWidth="122.0" text="Modul" />
+                  <TableColumn fx:id="TabellDato" minWidth="0.0" prefWidth="124.0" text="Dato" />
                </columns>
             </TableView>
          </children>
