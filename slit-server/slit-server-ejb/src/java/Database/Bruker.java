@@ -29,20 +29,19 @@ import javax.xml.bind.annotation.XmlTransient;
  * (fra Payaraserveren) til MySQL. Det brukes også motsatt vei til å
  * oversette fra MySQL til JDBC slik at klassen kan motta informasjon
  * i respons av spørringene.
- * 
+ *
  * Mesteparten av klassen er autogenerert ved hjelp av ConnectorJ og Payara ved 
  * bruk av en connection pool til å lese tabellene i databasen vår.
  * 
  * @author bevo
  * @author Adam
- * 
  */
 @Entity
-@Table(name = "Bruker")
+@Table(name = "bruker")
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Bruker.findAll", query = "SELECT b FROM Bruker b"),
-    @NamedQuery(name = "Bruker.findByBId", query = "SELECT b FROM Bruker b WHERE b.bId = :bId"),
+    @NamedQuery(name = "Bruker.findByBID", query = "SELECT b FROM Bruker b WHERE b.bID = :bID"),
     @NamedQuery(name = "Bruker.findByBFnavn", query = "SELECT b FROM Bruker b WHERE b.bFnavn = :bFnavn"),
     @NamedQuery(name = "Bruker.findByBEnavn", query = "SELECT b FROM Bruker b WHERE b.bEnavn = :bEnavn"),
     @NamedQuery(name = "Bruker.findByBEmail", query = "SELECT b FROM Bruker b WHERE b.bEmail = :bEmail"),
@@ -55,8 +54,8 @@ public class Bruker implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @Column(name = "b_id")
-    private Integer bId;
+    @Column(name = "b_ID")
+    private Integer bID;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 100)
@@ -82,19 +81,19 @@ public class Bruker implements Serializable {
     @Column(name = "b_type")
     private int bType;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "bid")
-    private Collection<Modulbesvarelse> modulbesvarelseCollection;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "bid")
     private Collection<Tilbakemelding> tilbakemeldingCollection;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "bid")
+    private Collection<Modulbesvarelse> modulbesvarelseCollection;
 
     public Bruker() {
     }
 
-    public Bruker(Integer bId) {
-        this.bId = bId;
+    public Bruker(Integer bID) {
+        this.bID = bID;
     }
 
-    public Bruker(Integer bId, String bFnavn, String bEnavn, String bEmail, String bPassord, int bType) {
-        this.bId = bId;
+    public Bruker(Integer bID, String bFnavn, String bEnavn, String bEmail, String bPassord, int bType) {
+        this.bID = bID;
         this.bFnavn = bFnavn;
         this.bEnavn = bEnavn;
         this.bEmail = bEmail;
@@ -102,12 +101,12 @@ public class Bruker implements Serializable {
         this.bType = bType;
     }
 
-    public Integer getBId() {
-        return bId;
+    public Integer getBID() {
+        return bID;
     }
 
-    public void setBId(Integer bId) {
-        this.bId = bId;
+    public void setBID(Integer bID) {
+        this.bID = bID;
     }
 
     public String getBFnavn() {
@@ -151,15 +150,6 @@ public class Bruker implements Serializable {
     }
 
     @XmlTransient
-    public Collection<Modulbesvarelse> getModulbesvarelseCollection() {
-        return modulbesvarelseCollection;
-    }
-
-    public void setModulbesvarelseCollection(Collection<Modulbesvarelse> modulbesvarelseCollection) {
-        this.modulbesvarelseCollection = modulbesvarelseCollection;
-    }
-
-    @XmlTransient
     public Collection<Tilbakemelding> getTilbakemeldingCollection() {
         return tilbakemeldingCollection;
     }
@@ -168,10 +158,19 @@ public class Bruker implements Serializable {
         this.tilbakemeldingCollection = tilbakemeldingCollection;
     }
 
+    @XmlTransient
+    public Collection<Modulbesvarelse> getModulbesvarelseCollection() {
+        return modulbesvarelseCollection;
+    }
+
+    public void setModulbesvarelseCollection(Collection<Modulbesvarelse> modulbesvarelseCollection) {
+        this.modulbesvarelseCollection = modulbesvarelseCollection;
+    }
+
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (bId != null ? bId.hashCode() : 0);
+        hash += (bID != null ? bID.hashCode() : 0);
         return hash;
     }
 
@@ -182,7 +181,7 @@ public class Bruker implements Serializable {
             return false;
         }
         Bruker other = (Bruker) object;
-        if ((this.bId == null && other.bId != null) || (this.bId != null && !this.bId.equals(other.bId))) {
+        if ((this.bID == null && other.bID != null) || (this.bID != null && !this.bID.equals(other.bID))) {
             return false;
         }
         return true;
@@ -190,7 +189,7 @@ public class Bruker implements Serializable {
 
     @Override
     public String toString() {
-        return "Database.Bruker[ bId=" + bId + " ]";
+        return "Database.Bruker[ bID=" + bID + " ]";
     }
     
 }

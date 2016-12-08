@@ -9,7 +9,6 @@ import java.io.Serializable;
 import java.util.Collection;
 import java.util.Date;
 import javax.persistence.Basic;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -28,22 +27,15 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
 /**
- * Denne klassen sender spørringer mot databasen vår (MySQL) ved hjelp av
- * connectorJ som oversetter spørringen vi sender i Java/JDBC 
- * (fra Payaraserveren) til MySQL. Det brukes også motsatt vei til å
- * oversette fra MySQL til JDBC slik at klassen kan motta informasjon
- * i respons av spørringene.
- * 
- * Mesteparten av klassen er autogenerert ved hjelp av ConnectorJ og Payara ved 
- * bruk av en connection pool til å lese tabellene i databasen vår.
- * @author bevo
+ *
+ * @author Adam
  */
 @Entity
-@Table(name = "Modulbesvarelse")
+@Table(name = "modulbesvarelse")
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Modulbesvarelse.findAll", query = "SELECT m FROM Modulbesvarelse m"),
-    @NamedQuery(name = "Modulbesvarelse.findByMbId", query = "SELECT m FROM Modulbesvarelse m WHERE m.mbId = :mbId"),
+    @NamedQuery(name = "Modulbesvarelse.findByMbID", query = "SELECT m FROM Modulbesvarelse m WHERE m.mbID = :mbID"),
     @NamedQuery(name = "Modulbesvarelse.findByMbTidspunkt", query = "SELECT m FROM Modulbesvarelse m WHERE m.mbTidspunkt = :mbTidspunkt")})
 public class Modulbesvarelse implements Serializable {
 
@@ -51,42 +43,40 @@ public class Modulbesvarelse implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @Column(name = "mb_id")
-    private Integer mbId;
+    @Column(name = "mb_ID")
+    private Integer mbID;
     @Basic(optional = false)
     @NotNull
     @Column(name = "mb_tidspunkt")
     @Temporal(TemporalType.TIMESTAMP)
     private Date mbTidspunkt;
-    @OneToMany(mappedBy = "mbID")
-    private Collection<Ressurs> ressursCollection;
     @JoinColumn(name = "m_ID", referencedColumnName = "m_ID")
     @ManyToOne(optional = false)
     private Modul mid;
-    @JoinColumn(name = "b_ID", referencedColumnName = "b_id")
+    @JoinColumn(name = "b_ID", referencedColumnName = "b_ID")
     @ManyToOne(optional = false)
     private Bruker bid;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "mbID")
-    private Collection<Tilbakemelding> tilbakemeldingCollection;
+    @OneToMany(mappedBy = "mbID")
+    private Collection<Ressurs> ressursCollection;
 
     public Modulbesvarelse() {
     }
 
-    public Modulbesvarelse(Integer mbId) {
-        this.mbId = mbId;
+    public Modulbesvarelse(Integer mbID) {
+        this.mbID = mbID;
     }
 
-    public Modulbesvarelse(Integer mbId, Date mbTidspunkt) {
-        this.mbId = mbId;
+    public Modulbesvarelse(Integer mbID, Date mbTidspunkt) {
+        this.mbID = mbID;
         this.mbTidspunkt = mbTidspunkt;
     }
 
-    public Integer getMbId() {
-        return mbId;
+    public Integer getMbID() {
+        return mbID;
     }
 
-    public void setMbId(Integer mbId) {
-        this.mbId = mbId;
+    public void setMbID(Integer mbID) {
+        this.mbID = mbID;
     }
 
     public Date getMbTidspunkt() {
@@ -95,15 +85,6 @@ public class Modulbesvarelse implements Serializable {
 
     public void setMbTidspunkt(Date mbTidspunkt) {
         this.mbTidspunkt = mbTidspunkt;
-    }
-
-    @XmlTransient
-    public Collection<Ressurs> getRessursCollection() {
-        return ressursCollection;
-    }
-
-    public void setRessursCollection(Collection<Ressurs> ressursCollection) {
-        this.ressursCollection = ressursCollection;
     }
 
     public Modul getMid() {
@@ -123,18 +104,18 @@ public class Modulbesvarelse implements Serializable {
     }
 
     @XmlTransient
-    public Collection<Tilbakemelding> getTilbakemeldingCollection() {
-        return tilbakemeldingCollection;
+    public Collection<Ressurs> getRessursCollection() {
+        return ressursCollection;
     }
 
-    public void setTilbakemeldingCollection(Collection<Tilbakemelding> tilbakemeldingCollection) {
-        this.tilbakemeldingCollection = tilbakemeldingCollection;
+    public void setRessursCollection(Collection<Ressurs> ressursCollection) {
+        this.ressursCollection = ressursCollection;
     }
 
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (mbId != null ? mbId.hashCode() : 0);
+        hash += (mbID != null ? mbID.hashCode() : 0);
         return hash;
     }
 
@@ -145,7 +126,7 @@ public class Modulbesvarelse implements Serializable {
             return false;
         }
         Modulbesvarelse other = (Modulbesvarelse) object;
-        if ((this.mbId == null && other.mbId != null) || (this.mbId != null && !this.mbId.equals(other.mbId))) {
+        if ((this.mbID == null && other.mbID != null) || (this.mbID != null && !this.mbID.equals(other.mbID))) {
             return false;
         }
         return true;
@@ -153,7 +134,7 @@ public class Modulbesvarelse implements Serializable {
 
     @Override
     public String toString() {
-        return "Database.Modulbesvarelse[ mbId=" + mbId + " ]";
+        return "Database.Modulbesvarelse[ mbID=" + mbID + " ]";
     }
     
 }

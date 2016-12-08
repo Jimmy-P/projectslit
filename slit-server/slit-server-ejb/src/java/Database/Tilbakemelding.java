@@ -13,6 +13,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
@@ -23,26 +25,19 @@ import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
- * Denne klassen sender spørringer mot databasen vår (MySQL) ved hjelp av
- * connectorJ som oversetter spørringen vi sender i Java/JPQL 
- * (fra Payaraserveren) til MySQL. Det brukes også motsatt vei til å
- * oversette fra MySQL til JPQL slik at klassen kan motta informasjon
- * i respons av spørringene.
- * 
- * Mesteparten av klassen er autogenerert ved hjelp av ConnectorJ og Payara ved 
- * bruk av en connection pool til å lese tabellene i databasen vår.
+ *
  * @author Adam
  */
 @Entity
 @Table(name = "tilbakemelding")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Tilbakemelding_1.findAll", query = "SELECT t FROM Tilbakemelding_1 t"),
-    @NamedQuery(name = "Tilbakemelding_1.findByTmID", query = "SELECT t FROM Tilbakemelding_1 t WHERE t.tmID = :tmID"),
-    @NamedQuery(name = "Tilbakemelding_1.findByTmGodkjentstatus", query = "SELECT t FROM Tilbakemelding_1 t WHERE t.tmGodkjentstatus = :tmGodkjentstatus"),
-    @NamedQuery(name = "Tilbakemelding_1.findByTmDato", query = "SELECT t FROM Tilbakemelding_1 t WHERE t.tmDato = :tmDato"),
-    @NamedQuery(name = "Tilbakemelding_1.findByTmStudentkommentar", query = "SELECT t FROM Tilbakemelding_1 t WHERE t.tmStudentkommentar = :tmStudentkommentar"),
-    @NamedQuery(name = "Tilbakemelding_1.findByTmLarerkommentar", query = "SELECT t FROM Tilbakemelding_1 t WHERE t.tmLarerkommentar = :tmLarerkommentar")})
+    @NamedQuery(name = "Tilbakemelding.findAll", query = "SELECT t FROM Tilbakemelding t"),
+    @NamedQuery(name = "Tilbakemelding.findByTmID", query = "SELECT t FROM Tilbakemelding t WHERE t.tmID = :tmID"),
+    @NamedQuery(name = "Tilbakemelding.findByTmGodkjentstatus", query = "SELECT t FROM Tilbakemelding t WHERE t.tmGodkjentstatus = :tmGodkjentstatus"),
+    @NamedQuery(name = "Tilbakemelding.findByTmDato", query = "SELECT t FROM Tilbakemelding t WHERE t.tmDato = :tmDato"),
+    @NamedQuery(name = "Tilbakemelding.findByTmStudentkommentar", query = "SELECT t FROM Tilbakemelding t WHERE t.tmStudentkommentar = :tmStudentkommentar"),
+    @NamedQuery(name = "Tilbakemelding.findByTmLarerkommentar", query = "SELECT t FROM Tilbakemelding t WHERE t.tmLarerkommentar = :tmLarerkommentar")})
 public class Tilbakemelding implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -64,6 +59,12 @@ public class Tilbakemelding implements Serializable {
     @Size(max = 1000)
     @Column(name = "tm_larerkommentar")
     private String tmLarerkommentar;
+    @JoinColumn(name = "m_ID", referencedColumnName = "m_ID")
+    @ManyToOne(optional = false)
+    private Modul mid;
+    @JoinColumn(name = "b_ID", referencedColumnName = "b_ID")
+    @ManyToOne(optional = false)
+    private Bruker bid;
 
     public Tilbakemelding() {
     }
@@ -117,6 +118,22 @@ public class Tilbakemelding implements Serializable {
         this.tmLarerkommentar = tmLarerkommentar;
     }
 
+    public Modul getMid() {
+        return mid;
+    }
+
+    public void setMid(Modul mid) {
+        this.mid = mid;
+    }
+
+    public Bruker getBid() {
+        return bid;
+    }
+
+    public void setBid(Bruker bid) {
+        this.bid = bid;
+    }
+
     @Override
     public int hashCode() {
         int hash = 0;
@@ -139,7 +156,7 @@ public class Tilbakemelding implements Serializable {
 
     @Override
     public String toString() {
-        return "Database.Tilbakemelding_1[ tmID=" + tmID + " ]";
+        return "Database.Tilbakemelding[ tmID=" + tmID + " ]";
     }
     
 }

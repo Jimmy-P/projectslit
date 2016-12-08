@@ -45,7 +45,7 @@ public class BrukerSessionBean implements BrukerSessionBeanRemote {
         
         BrukerDataModel brukerDM = new BrukerDataModel();
         
-        brukerDM.setbId(bruker.getBId());
+        brukerDM.setbId(bruker.getBID());
         brukerDM.setbFnavn(bruker.getBFnavn());
         brukerDM.setbEnavn(bruker.getBEnavn());
         brukerDM.setbEmail(bruker.getBEmail());

@@ -50,7 +50,7 @@ public class ModulBesvarelseSessionBean implements ModulBesvarelseSessionBeanRem
     {
         ModulBesvarelseDataModel modulBesvarelseDataModel = new ModulBesvarelseDataModel(); 
         
-        modulBesvarelseDataModel.setMbId(modulbesvarelse.getMbId());
+        modulBesvarelseDataModel.setMbId(modulbesvarelse.getMbID());
         modulBesvarelseDataModel.setMbTidspunkt(modulbesvarelse.getMbTidspunkt());
         
         

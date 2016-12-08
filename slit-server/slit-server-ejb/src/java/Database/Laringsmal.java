@@ -6,36 +6,27 @@
 package Database;
 
 import java.io.Serializable;
-import java.util.Collection;
 import javax.persistence.Basic;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
 
 /**
- * Denne klassen sender spørringer mot databasen vår (MySQL) ved hjelp av
- * connectorJ som oversetter spørringen vi sender i Java/JDBC 
- * (fra Payaraserveren) til MySQL. Det brukes også motsatt vei til å
- * oversette fra MySQL til JDBC slik at klassen kan motta informasjon
- * i respons av spørringene.
- * 
- * Mesteparten av klassen er autogenerert ved hjelp av ConnectorJ og Payara ved 
- * bruk av en connection pool til å lese tabellene i databasen vår.
- * @author bevo
+ *
+ * @author Adam
  */
 @Entity
-@Table(name = "Laringsmal")
+@Table(name = "laringsmal")
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Laringsmal.findAll", query = "SELECT l FROM Laringsmal l"),
@@ -54,8 +45,9 @@ public class Laringsmal implements Serializable {
     @Size(min = 1, max = 300)
     @Column(name = "l_tekst")
     private String lTekst;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "lid")
-    private Collection<Modul> modulCollection;
+    @JoinColumn(name = "m_ID", referencedColumnName = "m_ID")
+    @ManyToOne(optional = false)
+    private Modul mid;
 
     public Laringsmal() {
     }
@@ -85,13 +77,12 @@ public class Laringsmal implements Serializable {
         this.lTekst = lTekst;
     }
 
-    @XmlTransient
-    public Collection<Modul> getModulCollection() {
-        return modulCollection;
+    public Modul getMid() {
+        return mid;
     }
 
-    public void setModulCollection(Collection<Modul> modulCollection) {
-        this.modulCollection = modulCollection;
+    public void setMid(Modul mid) {
+        this.mid = mid;
     }
 
     @Override

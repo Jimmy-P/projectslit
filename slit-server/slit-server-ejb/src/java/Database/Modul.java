@@ -14,8 +14,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
@@ -26,15 +24,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
 /**
- * Denne klassen sender spørringer mot databasen vår (MySQL) ved hjelp av
- * connectorJ som oversetter spørringen vi sender i Java/JDBC 
- * (fra Payaraserveren) til MySQL. Det brukes også motsatt vei til å
- * oversette fra MySQL til JDBC slik at klassen kan motta informasjon
- * i respons av spørringene.
- * 
- * Mesteparten av klassen er autogenerert ved hjelp av ConnectorJ og Payara ved 
- * bruk av en connection pool til å lese tabellene i databasen vår.
- * @author Jimmy
+ *
+ * @author Adam
  */
 @Entity
 @Table(name = "modul")
@@ -69,12 +60,13 @@ public class Modul implements Serializable {
     @Column(name = "m_oppgave")
     private String mOppgave;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "mid")
+    private Collection<Tilbakemelding> tilbakemeldingCollection;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "mid")
     private Collection<Modulbesvarelse> modulbesvarelseCollection;
     @OneToMany(mappedBy = "mid")
     private Collection<Ressurs> ressursCollection;
-    @JoinColumn(name = "l_ID", referencedColumnName = "l_ID")
-    @ManyToOne(optional = false)
-    private Laringsmal lid;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "mid")
+    private Collection<Laringsmal> laringsmalCollection;
 
     public Modul() {
     }
@@ -123,6 +115,15 @@ public class Modul implements Serializable {
     }
 
     @XmlTransient
+    public Collection<Tilbakemelding> getTilbakemeldingCollection() {
+        return tilbakemeldingCollection;
+    }
+
+    public void setTilbakemeldingCollection(Collection<Tilbakemelding> tilbakemeldingCollection) {
+        this.tilbakemeldingCollection = tilbakemeldingCollection;
+    }
+
+    @XmlTransient
     public Collection<Modulbesvarelse> getModulbesvarelseCollection() {
         return modulbesvarelseCollection;
     }
@@ -140,12 +141,13 @@ public class Modul implements Serializable {
         this.ressursCollection = ressursCollection;
     }
 
-    public Laringsmal getLid() {
-        return lid;
+    @XmlTransient
+    public Collection<Laringsmal> getLaringsmalCollection() {
+        return laringsmalCollection;
     }
 
-    public void setLid(Laringsmal lid) {
-        this.lid = lid;
+    public void setLaringsmalCollection(Collection<Laringsmal> laringsmalCollection) {
+        this.laringsmalCollection = laringsmalCollection;
     }
 
     @Override
