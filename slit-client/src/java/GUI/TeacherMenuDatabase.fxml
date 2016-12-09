@@ -33,7 +33,7 @@
                   <Font name="Bauhaus 93" size="18.0" />
                </font>
             </Button>
-            <Button fx:id="ButtonLoggUtDB" layoutX="501.0" layoutY="24.0" mnemonicParsing="false" text="Logg ut">
+            <Button fx:id="ButtonLoggUtDB" layoutX="501.0" layoutY="24.0" mnemonicParsing="false" onAction="#buttonLogOutEvent" text="Logg ut">
                <font>
                   <Font name="Bauhaus 93" size="11.0" />
                </font>

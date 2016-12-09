@@ -69,5 +69,9 @@ public class TeacherMenuDatabaseController implements Initializable {
     private void buttonSOEvent(ActionEvent event) throws Exception {
         SceneSelecter.getInstance().setScene(ViewNames.modulView);  //DENNE MÅ RETTES NÅR VI HAR EN FXML FOR STUDENTOVERSIKT
         }
+    @FXML
+    private void buttonLogOutEvent(ActionEvent event) throws Exception {
+    SceneSelecter.getInstance().setScene(ViewNames.loginView);
+    }
     
 }

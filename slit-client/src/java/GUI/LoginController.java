@@ -42,6 +42,8 @@ public class LoginController implements Initializable {
     
     BrukerManager bm = new BrukerManager();
     
+    private static LoggedUserInfo lui;
+    
     /**
      * Initializes the controller class.
      */
@@ -91,6 +93,8 @@ public class LoginController implements Initializable {
                   try
                 {                
                 
+                    int userid = bdm.getbId();
+                    lui = new LoggedUserInfo(bdm.getbFnavn(), bdm.getbEnavn(), userid);
                     SceneSelecter.getInstance().setScene(ViewNames.studentView);
                     
                 }
@@ -119,6 +123,18 @@ public class LoginController implements Initializable {
         {
             this.statusLabel.setText("Har du husket å skrive inn Epost og Passord?");
         }
+    }
+    public static String getLoggedFName()
+    {
+        return lui.getFname();
+    }
+    public static String getLoggedEName()
+    {
+        return lui.getEname();
+    }
+    public static int getLoggedID()
+    {
+        return lui.getId();
     }
     
 }

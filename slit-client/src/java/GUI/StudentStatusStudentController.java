@@ -5,6 +5,7 @@
  */
 package GUI;
 
+import Framework.BrukerManager;
 import Names.ViewNames;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -116,14 +117,24 @@ public class StudentStatusStudentController implements Initializable {
     /**
      * Initializes the controller class.
      */
+    
+    String fnavn = LoginController.getLoggedFName();
+    String enavn = LoginController.getLoggedEName();
+    int userid = LoginController.getLoggedID();
+    
+    
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        LabelHeiSss.setText("Hei "+fnavn+"!");
+        
     }    
 
     @FXML
     private void logOut(ActionEvent event) throws Exception {
         SceneSelecter.getInstance().setScene(ViewNames.loginView);
+        
     }
     
 }

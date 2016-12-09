@@ -50,7 +50,7 @@ public class TeacherMenuStudentoversiktController {
         SceneSelecter.getInstance().setScene(ViewNames.SOView);
         }
     
-    @FXML
+    /*@FXML
     private TableView<MyDataModel> myTableView;
 
     @FXML
@@ -65,5 +65,5 @@ public class TeacherMenuStudentoversiktController {
 
 private List<MyDataModel> getItemsToAdd(){
 // this method would fetch the necessary items from database.
-}
+}*/
 }
