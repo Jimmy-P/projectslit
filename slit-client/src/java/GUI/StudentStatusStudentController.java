@@ -19,7 +19,9 @@ import javafx.scene.layout.Pane;
 /**
  * FXML Controller class
  *
- * @author Jimmy
+ * Denne klassen gir studenten oversikt over sine moduler.
+ * 
+ * @author Kjetil
  */
 public class StudentStatusStudentController implements Initializable {
 
@@ -115,7 +117,7 @@ public class StudentStatusStudentController implements Initializable {
     private Button ButtonHjelpemidlerSss;
 
     /**
-     * Initializes the controller class.
+     * Lagrer informajon om innlogget bruker i variabler
      */
     
     String fnavn = LoginController.getLoggedFName();
@@ -123,22 +125,47 @@ public class StudentStatusStudentController implements Initializable {
     int userid = LoginController.getLoggedID();
     
     
-    
+    //"Personlig" velkomsthilsen
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         LabelHeiSss.setText("Hei "+fnavn+"!");
         
     }    
-
+    //Knapp som logger ut
     @FXML
     private void logOut(ActionEvent event) throws Exception {
         SceneSelecter.getInstance().setScene(ViewNames.loginView);
         
     }
-
+    //Knapp for å levere modul 1
     @FXML
     private void leverModul1(ActionEvent event) throws Exception {
+        LoggedUserInfo.setModulnr(1);
+        SceneSelecter.getInstance().setScene(ViewNames.innleveringView);
+    }
+    //Knapp for å levere modul 2
+    @FXML
+    private void leverModul2(ActionEvent event) throws Exception{
+        LoggedUserInfo.setModulnr(2);
+        SceneSelecter.getInstance().setScene(ViewNames.innleveringView);
+    }
+    //Knapp for å levere modul 3
+    @FXML
+    private void leverModul3(ActionEvent event) throws Exception{
+        LoggedUserInfo.setModulnr(3);
+        SceneSelecter.getInstance().setScene(ViewNames.innleveringView);
+    }
+    //Knapp for å levere modul 4
+    @FXML
+    private void leverModul4(ActionEvent event) throws Exception{
+        LoggedUserInfo.setModulnr(4);
+        SceneSelecter.getInstance().setScene(ViewNames.innleveringView);
+    }
+    //Knapp for å levere modul 5
+    @FXML
+    private void leverModul5(ActionEvent event) throws Exception{
+        LoggedUserInfo.setModulnr(5);
         SceneSelecter.getInstance().setScene(ViewNames.innleveringView);
     }
     

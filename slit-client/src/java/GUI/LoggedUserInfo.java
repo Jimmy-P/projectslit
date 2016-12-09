@@ -18,6 +18,9 @@ public class LoggedUserInfo {
  int id;
  String epost;
  
+ private static int modulnr;
+
+ 
  
 LoggedUserInfo(String fname, String ename, int id)
 {
@@ -39,5 +42,12 @@ LoggedUserInfo(String fname, String ename, int id)
         return id;
     }
 
+    public static int getModulnr() {
+        return modulnr;
+    }
+
+    public static void setModulnr(int nr) {
+        modulnr = nr;
+    }
     
 }

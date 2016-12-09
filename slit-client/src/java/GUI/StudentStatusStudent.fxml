@@ -81,7 +81,7 @@
                               <Font name="Bauhaus 93" size="24.0" />
                            </font>
                         </Label>
-                        <Button fx:id="ButtonLeverModul2sss" mnemonicParsing="false" text="Levert">
+                        <Button fx:id="ButtonLeverModul2sss" mnemonicParsing="false" onAction="#leverModul2" text="Levert">
                            <font>
                               <Font name="Bauhaus 93" size="12.0" />
                            </font>
@@ -96,7 +96,7 @@
                               <Font name="Bauhaus 93" size="24.0" />
                            </font>
                         </Label>
-                        <Button fx:id="ButtonLeverModul3sss" mnemonicParsing="false" text="Levert">
+                        <Button fx:id="ButtonLeverModul3sss" mnemonicParsing="false" onAction="#leverModul3" text="Levert">
                            <font>
                               <Font name="Bauhaus 93" size="12.0" />
                            </font>
@@ -111,7 +111,7 @@
                               <Font name="Bauhaus 93" size="24.0" />
                            </font>
                         </Label>
-                        <Button fx:id="ButtonLeverModul4sss" mnemonicParsing="false" text="Lever">
+                        <Button fx:id="ButtonLeverModul4sss" mnemonicParsing="false" onAction="#leverModul4" text="Lever">
                            <font>
                               <Font name="Bauhaus 93" size="12.0" />
                            </font>
@@ -126,7 +126,7 @@
                               <Font name="Bauhaus 93" size="24.0" />
                            </font>
                         </Label>
-                        <Button fx:id="ButtonLeverModul5sss" mnemonicParsing="false" text="Lever">
+                        <Button fx:id="ButtonLeverModul5sss" mnemonicParsing="false" onAction="#leverModul5" text="Lever">
                            <font>
                               <Font name="Bauhaus 93" size="12.0" />
                            </font>

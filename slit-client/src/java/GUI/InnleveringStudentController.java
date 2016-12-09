@@ -5,6 +5,7 @@
  */
 package GUI;
 
+import Framework.ModulManager;
 import Names.ViewNames;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -21,14 +22,12 @@ import javafx.scene.layout.Pane;
 /**
  * FXML Controller class
  *
- * @author Jimmy
+ * @author Kjetil
  */
 public class InnleveringStudentController implements Initializable {
 
     @FXML
     private Pane PaneBakgrunnInnlev;
-    @FXML
-    private TextField LabelOverskriftInnlev;
     @FXML
     private ListView<?> ListviewInnlev;
     @FXML
@@ -54,29 +53,44 @@ public class InnleveringStudentController implements Initializable {
     @FXML
     private Button ButtonLesestoffInnlev;
     @FXML
-    private Button ButtonUsikkerInnlev;
-    @FXML
     private Label LabelHjelpemidlerInnlev;
     @FXML
     private Button ButtonSendInnlev;
     
+    ModulManager mm = new ModulManager();
     
-    private int modulnr;
+    private int modulnr = LoggedUserInfo.getModulnr();
     private int userid;
+    
+    @FXML
+    private Label labelModulDescr;
+   
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        CheckboxLærmål1Innlev.setText("LM 1");
+        CheckboxLærmål2Innlev.setText("LM 2");
+        CheckboxLærmål3Innlev.setText("LM 3");
+        CheckboxLærmål4Innlev.setText("LM 4");
+        CheckboxLærmål5Innlev.setText("LM 5");
+        CheckboxLærmål6Innlev.setText("LM 6");
+        
+        labelModulDescr.setText(mm.getModulName(modulnr)+ " - "+ mm.getModulDescr(modulnr));
+        
     }
 
     
     
     
-    public void sendEvent()
+    @FXML
+    public void sendEvent() throws Exception
     {
         //Når student trykker på send
+        
+        SceneSelecter.getInstance().setScene(ViewNames.studentView); //Denne linjen sender bruker tilbake til moduloversikt. 
     }
     @FXML
     public void cancelEvent() throws Exception
