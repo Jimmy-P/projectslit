@@ -136,5 +136,10 @@ public class StudentStatusStudentController implements Initializable {
         SceneSelecter.getInstance().setScene(ViewNames.loginView);
         
     }
+
+    @FXML
+    private void leverModul1(ActionEvent event) throws Exception {
+        SceneSelecter.getInstance().setScene(ViewNames.innleveringView);
+    }
     
 }

@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.InnleveringStudentController">
    <children>
       <Pane fx:id="PaneBakgrunnInnlev" layoutY="-7.0" prefHeight="414.0" prefWidth="616.0">
          <children>
@@ -24,12 +24,12 @@
             <CheckBox fx:id="CheckboxLærmål4Innlev" layoutX="41.0" layoutY="218.0" mnemonicParsing="false" text="Læringsmål 4" />
             <CheckBox fx:id="CheckboxLærmål5Innlev" layoutX="41.0" layoutY="243.0" mnemonicParsing="false" text="Læringsmål 5" />
             <CheckBox fx:id="CheckboxLærmål6Innlev" layoutX="41.0" layoutY="270.0" mnemonicParsing="false" text="Læringsmål 6" />
-            <Button fx:id="ButtonTilbakeInnlev" layoutX="456.0" layoutY="37.0" mnemonicParsing="false" text="Tilbake">
+            <Button fx:id="ButtonTilbakeInnlev" layoutX="456.0" layoutY="37.0" mnemonicParsing="false" onAction="#cancelEvent" text="Tilbake">
                <font>
                   <Font name="Bauhaus 93" size="11.0" />
                </font>
             </Button>
-            <Button fx:id="ButtonLoggUTInnlev" layoutX="519.0" layoutY="37.0" mnemonicParsing="false" text="Logg ut">
+            <Button fx:id="ButtonLoggUTInnlev" layoutX="519.0" layoutY="37.0" mnemonicParsing="false" onAction="#logoutEvent" text="Logg ut">
                <font>
                   <Font name="Bauhaus 93" size="11.0" />
                </font>
@@ -43,7 +43,7 @@
             <Button fx:id="ButtonLesestoffInnlev" layoutX="497.0" layoutY="195.0" mnemonicParsing="false" text="Lesestoff" />
             <Button fx:id="ButtonUsikkerInnlev" layoutX="503.0" layoutY="231.0" mnemonicParsing="false" text="Button" />
             <Label fx:id="LabelHjelpemidlerInnlev" layoutX="495.0" layoutY="119.0" text="Hjelpemidler" />
-            <Button fx:id="ButtonSendInnlev" layoutX="506.0" layoutY="351.0" mnemonicParsing="false" text="Send">
+            <Button fx:id="ButtonSendInnlev" layoutX="506.0" layoutY="351.0" mnemonicParsing="false" onAction="#sendEvent" text="Send">
                <font>
                   <Font name="Bauhaus 93" size="13.0" />
                </font>
