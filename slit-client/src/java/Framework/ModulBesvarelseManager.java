@@ -5,7 +5,9 @@
  */
 package Framework;
 
+import DataModel.BrukerDataModel;
 import DataModel.ModulBesvarelseDataModel;
+import DataModel.ModulDataModel;
 import Server.ModulBesvarelseSessionBeanRemote;
 import java.util.List;
 import java.util.logging.Level;
@@ -48,4 +50,8 @@ public class ModulBesvarelseManager {
         return this.lookupModulBesvarelseSessionBeanRemote().getAllModulBesvarelse();
     }
     
+    public void newModulBesvarelse(ModulBesvarelseDataModel mbdm, BrukerDataModel bdm, ModulDataModel mdm){
+        this.lookupModulBesvarelseSessionBeanRemote().newModulBesvarelse(mbdm, bdm, mdm);
+    
+}
 }

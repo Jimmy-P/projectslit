@@ -5,7 +5,9 @@
  */
 package Server;
 
+import DataModel.BrukerDataModel;
 import DataModel.ModulBesvarelseDataModel;
+import DataModel.ModulDataModel;
 import java.util.List;
 import javax.ejb.Remote;
 
@@ -24,5 +26,10 @@ public interface ModulBesvarelseSessionBeanRemote {
      * @return modulbesvarelsedata
      */
     List <ModulBesvarelseDataModel> getAllModulBesvarelse();   
+
+    public void newModulBesvarelse(ModulBesvarelseDataModel mbdm, 
+                                                BrukerDataModel bdm,
+                                                ModulDataModel mdm);
+    
     
 }

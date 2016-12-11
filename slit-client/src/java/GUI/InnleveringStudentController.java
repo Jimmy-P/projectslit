@@ -5,9 +5,14 @@
  */
 package GUI;
 
+import DataModel.BrukerDataModel;
+import DataModel.ModulBesvarelseDataModel;
+import DataModel.ModulDataModel;
+import Framework.ModulBesvarelseManager;
 import Framework.ModulManager;
 import Names.ViewNames;
 import java.net.URL;
+import java.util.Date;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -89,6 +94,20 @@ public class InnleveringStudentController implements Initializable {
     public void sendEvent() throws Exception
     {
         //Når student trykker på send
+        ModulBesvarelseManager mbm = new ModulBesvarelseManager();
+        
+        ModulBesvarelseDataModel mbdm = new ModulBesvarelseDataModel();
+        BrukerDataModel bdm = new BrukerDataModel();
+        ModulDataModel mdm = new ModulDataModel();
+        
+        Date mbDeliveryDate = new Date();
+        
+        mbdm.setMbId(1);
+        mbdm.setMbTidspunkt(mbDeliveryDate);
+        bdm.setbId(4);
+        mdm.setmID(1);
+       
+        mbm.newModulBesvarelse(mbdm, bdm, mdm);
         
         SceneSelecter.getInstance().setScene(ViewNames.studentView); //Denne linjen sender bruker tilbake til moduloversikt. 
     }

@@ -6,7 +6,6 @@
 package DataModel;
 
 //import slit-server-ejb.Database.Modul;
-//import slit-server-ejb.Database.Bruker;
 import java.util.Date;
 import java.util.List;
 import javafx.beans.property.SimpleIntegerProperty;
@@ -22,8 +21,10 @@ public class ModulBesvarelseDataModel implements java.io.Serializable {
  
     private int MbId;
     private Date mbTidspunkt;
-    private int bid;
-    private int mid;   
+    //private int bid;
+    //private int mid;
+    private BrukerDataModel brukerDataModel;
+    private ModulDataModel modulDataModel;
 
     public int getMbId() {
         return MbId;
@@ -40,7 +41,10 @@ public class ModulBesvarelseDataModel implements java.io.Serializable {
     public void setMbTidspunkt(Date mbTidspunkt) {
         this.mbTidspunkt = mbTidspunkt;
     }
-
+    
+    
+    
+    /*
     public int getBid() {
         return bid;
     }
@@ -56,10 +60,21 @@ public class ModulBesvarelseDataModel implements java.io.Serializable {
     public void setMid(int mid) {
         this.mid = mid;
     }
+    */
 
+    public BrukerDataModel getBrukerDataModel() {
+        return brukerDataModel;
+    }
 
-    
-    
-    
-  
+    public void setBrukerDataModel(BrukerDataModel brukerDataModel) {
+        this.brukerDataModel = brukerDataModel;
+    }
+
+    public ModulDataModel getModulDataModel() {
+        return modulDataModel;
+    }
+
+    public void setModulDataModel(ModulDataModel modulDataModel) {
+        this.modulDataModel = modulDataModel;
+    }
 }

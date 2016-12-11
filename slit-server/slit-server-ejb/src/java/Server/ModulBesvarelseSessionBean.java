@@ -6,13 +6,14 @@
 package Server;
 
 import DataModel.ModulBesvarelseDataModel;
+import DataModel.BrukerDataModel;
+import DataModel.ModulDataModel;
+import Database.Bruker;
+import Database.Modul;
 import Database.ModulbesvarelsePK;
 import Database.Modulbesvarelse;
-import Database.Bruker;
-import DataModel.BrukerDataModel;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -24,6 +25,7 @@ import javax.persistence.Query;
  * 
  * Da dette er en stateless session bean lagrer den ikke noe informasjonen
  * om modulbesvarelsene etter metodekallet er gjennomført.
+ * @author Adam
  * @author bevo
  */
 @Stateless
@@ -45,32 +47,49 @@ public class ModulBesvarelseSessionBean implements ModulBesvarelseSessionBeanRem
                 
       
     //}
-    
-    public ModulBesvarelseDataModel convertModulBesvarelse(Modulbesvarelse modulbesvarelse) 
+    /*
+    private ModulBesvarelseDataModel convertModulBesvarelse(Modulbesvarelse modulbesvarelse,
+     Bruker bruker, Modul modul) 
     {
+        
+        //Bruker bruker = em.find(Bruker.class, modulbesvarelse.getBid());
+        //Modul modul = em.find(Modul.class, modulbesvarelse.getMid());
+      
+        
         ModulBesvarelseDataModel modulBesvarelseDataModel = new ModulBesvarelseDataModel(); 
         
         modulBesvarelseDataModel.setMbId(modulbesvarelse.getMbID());
         modulBesvarelseDataModel.setMbTidspunkt(modulbesvarelse.getMbTidspunkt());
-        
+        modulBesvarelseDataModel.setMid(Modul.class, modul.setMID());
+        modulBesvarelseDataModel.setBid(bruker.setBID());
         
         return modulBesvarelseDataModel; 
     }
+    */
     
-    public ModulBesvarelseDataModel convertModulBesvarelse(ModulbesvarelsePK modulbesvarelse) 
+    
+    
+    
+    /*
+    private ModulBesvarelseDataModel convertModulBesvarelse(ModulbesvarelsePK modulbesvarelse) 
     {
         ModulBesvarelseDataModel modulBesvarelseDataModel = new ModulBesvarelseDataModel(); 
         
         modulBesvarelseDataModel.setMid(modulbesvarelse.getmid());
-        modulBesvarelseDataModel.setMid(modulbesvarelse.getmid());
+        modulBesvarelseDataModel.setMid(modulbesvarelse.getbid());
         
         return modulBesvarelseDataModel; 
     }
     
+    */
+    
     /**
      *
+     * 
      * @return ModulBesvarelseData
      */
+    
+    /*
     @Override
     public List <ModulBesvarelseDataModel> getAllModulBesvarelse() {
         
@@ -93,7 +112,39 @@ public class ModulBesvarelseSessionBean implements ModulBesvarelseSessionBeanRem
         }
         return ModulBesvarelseData;
     }
-
     
+    */
+    
+    private Modulbesvarelse convertModulBesvarelseDataModel(ModulBesvarelseDataModel mbdm,
+            BrukerDataModel bdm, ModulDataModel mdm)
+    {
+        
+        Bruker bruker = em.find(Bruker.class, bdm.getbId());
+        Modul modul = em.find(Modul.class, mdm.getmID());
+        
+        Modulbesvarelse modulbesvarelse = new Modulbesvarelse();
+        
+        modulbesvarelse.setMbID(mbdm.getMbId());
+        modulbesvarelse.setMbTidspunkt(mbdm.getMbTidspunkt());
+        modulbesvarelse.setBid(bruker);
+        modulbesvarelse.setMid(modul);
+        
+        return modulbesvarelse;
+        
+    }
+    
+    @Override
+    public void newModulBesvarelse(ModulBesvarelseDataModel mbdm, 
+                         BrukerDataModel bdm, ModulDataModel mdm){
+        
+        Modulbesvarelse newMB = convertModulBesvarelseDataModel(mbdm, bdm, mdm);
+ 
+        em.persist(newMB);
+    }
+
+    @Override
+    public List<ModulBesvarelseDataModel> getAllModulBesvarelse() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
 
