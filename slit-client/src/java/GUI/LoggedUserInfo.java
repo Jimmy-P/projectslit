@@ -5,7 +5,6 @@
  */
 package GUI;
 
-import Framework.BrukerManager;
 
 /**
  *
@@ -49,5 +48,5 @@ LoggedUserInfo(String fname, String ename, int id)
     public static void setModulnr(int nr) {
         modulnr = nr;
     }
-    
+      
 }

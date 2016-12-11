@@ -27,6 +27,7 @@ import javafx.scene.layout.Pane;
 /**
  * FXML Controller class
  *
+ * @author Adam
  * @author Kjetil
  */
 public class InnleveringStudentController implements Initializable {
@@ -66,6 +67,7 @@ public class InnleveringStudentController implements Initializable {
     
     private int modulnr = LoggedUserInfo.getModulnr();
     private int userid;
+    private int brukerid = LoginController.getLoggedID();
     
     @FXML
     private Label labelModulDescr;
@@ -102,10 +104,12 @@ public class InnleveringStudentController implements Initializable {
         
         Date mbDeliveryDate = new Date();
         
-        mbdm.setMbId(1);
+        //MbID kan være hvilken som helst verdi da serveren autogenerer
+        //primærnøkkel når det legges til ny rad (auto-increment)
+        mbdm.setMbId(0);
         mbdm.setMbTidspunkt(mbDeliveryDate);
-        bdm.setbId(4);
-        mdm.setmID(1);
+        bdm.setbId(LoginController.getLoggedID());
+        mdm.setmID(LoggedUserInfo.getModulnr());
        
         mbm.newModulBesvarelse(mbdm, bdm, mdm);
         
