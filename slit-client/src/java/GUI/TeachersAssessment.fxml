@@ -11,12 +11,12 @@
 
 <Pane fx:id="PaneBakgrunnTilbakemeld" prefHeight="414.0" prefWidth="616.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.TeachersAssessmentController">
    <children>
-      <TextField fx:id="LabelTilbakemeldTilbakemeld" layoutX="34.0" layoutY="37.0" prefHeight="66.0" prefWidth="361.0" text="Tilbakemelding Modul 3">
+      <TextField fx:id="LabelTilbakemeldTilbakemeld" layoutX="34.0" layoutY="26.0" prefHeight="66.0" prefWidth="361.0" text="Tilbakemelding Modul 3">
          <font>
             <Font name="Bauhaus 93" size="30.0" />
          </font>
       </TextField>
-      <TitledPane fx:id="TitledPaneInternKomTilbakemeld" animated="false" layoutX="265.0" layoutY="116.0" prefHeight="225.0" prefWidth="231.0" text="Intern kommentar">
+      <TitledPane fx:id="TitledPaneInternKomTilbakemeld" animated="false" layoutX="308.0" layoutY="106.0" prefHeight="225.0" prefWidth="231.0" text="Intern kommentar">
          <content>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="202.0" prefWidth="156.0">
                <children>
@@ -25,12 +25,12 @@
             </AnchorPane>
          </content>
       </TitledPane>
-      <Button fx:id="ButtonAvbrytTilbakemeld" layoutX="519.0" layoutY="37.0" mnemonicParsing="false" onAction="#buttonCancel" text="Avbryt">
+      <Button fx:id="ButtonAvbrytTilbakemeld" layoutX="539.0" layoutY="37.0" mnemonicParsing="false" onAction="#buttonCancel" text="Avbryt">
          <font>
             <Font name="Bauhaus 93" size="11.0" />
          </font>
       </Button>
-      <TitledPane fx:id="TitledPaneStudKomTilbakemeld" animated="false" layoutX="34.0" layoutY="116.0" prefHeight="225.0" prefWidth="231.0" text="Kommentar til studenten">
+      <TitledPane fx:id="TitledPaneStudKomTilbakemeld" animated="false" layoutX="34.0" layoutY="106.0" prefHeight="225.0" prefWidth="231.0" text="Kommentar til studenten">
          <content>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="202.0" prefWidth="156.0">
                <children>
@@ -39,16 +39,16 @@
             </AnchorPane>
          </content>
       </TitledPane>
-      <Button fx:id="ButGodkjentTilbakemeld" layoutX="514.0" layoutY="153.0" mnemonicParsing="false" onAction="#modulAccepted" text="Godkjent">
+      <Button fx:id="ButGodkjentTilbakemeld" layoutX="530.0" layoutY="341.0" mnemonicParsing="false" onAction="#modulAccepted" text="Godkjent">
          <font>
             <Font name="Bauhaus 93" size="12.0" />
          </font>
       </Button>
-      <Button fx:id="ButIkkeGodkjentTilbakemeld" layoutX="500.0" layoutY="196.0" mnemonicParsing="false" onAction="#modulRejected" text="Ikke Godkjent">
+      <Button fx:id="ButIkkeGodkjentTilbakemeld" layoutX="504.0" layoutY="376.0" mnemonicParsing="false" onAction="#modulRejected" text="Ikke Godkjent">
          <font>
             <Font name="Bauhaus 93" size="12.0" />
          </font>
       </Button>
-      <Label fx:id="labelFeedback" layoutX="63.0" layoutY="354.0" prefHeight="22.0" prefWidth="405.0" />
+      <Label fx:id="labelFeedback" layoutX="40.0" layoutY="352.0" prefHeight="22.0" prefWidth="405.0" />
    </children>
 </Pane>

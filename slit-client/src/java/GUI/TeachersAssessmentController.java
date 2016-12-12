@@ -1,7 +1,8 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Her skal læreren skrive inn en kommentar eller 
+tilbakemelding på studentens innlevering. Lærer kan
+også skrive en intern kommentar hvis det er noe 
+spesielt bra eller mindre bra, eller Husk:)
  */
 package GUI;
 
@@ -42,7 +43,7 @@ public class TeachersAssessmentController implements Initializable {
     private Button ButGodkjentTilbakemeld;
     @FXML//Sender ikke godkjent og kommentar tilbake til studenten//
     private Button ButIkkeGodkjentTilbakemeld;
-    @FXML
+    @FXML//Sier at studenten må få en kommentar//
     private Label labelFeedback;
 
     /**
@@ -53,108 +54,59 @@ public class TeachersAssessmentController implements Initializable {
         // TODO
     }    
     
-    
-    
-    
+    //Her skriver lærer inn kommmentar til godkjent modul
     @FXML
      private void modulAccepted(ActionEvent event) {
          labelFeedback.setText("");
         String studentComment = TextAreaTilStudentTilbakemeld1.getText();
         String teacherComment = TextAreaInternTilbakemeld.getText();
         
-        
-
-        
-       
-        }
+     }
      
-
-    @FXML
-    private void buttonCancel(ActionEvent event) {
-        
-        
-        
-    }
-
+     //Her skriver lærer inn kommentar til ikke godkjent modul
     @FXML
     private void modulRejected(ActionEvent event) {
         labelFeedback.setText("");
         String studentComment = TextAreaTilStudentTilbakemeld1.getText();
         String teacherComment = TextAreaInternTilbakemeld.getText();
         
+    //Hvis studentkomentaren er tom, gir denne metoden beskjed 
+    //om at kommentarfeltet må fylles inn     
         if (studentComment.isEmpty()){
-            labelFeedback.setText("Ikke godkjente besvarelser må ha kommentar");
+            labelFeedback.setText("Alle besvarelser må ha kommentar.");
             return;
         }
+        //Send kommentaren på besvarelsen rilbake til studenten
         else{
-            
+            //labelOutput.setText(""); ?
             //Her må vi opprette et tilbakemeldingsobjekt
+            // SceneSelecter.getInstance().setScene(ViewNames.studentComment);
         }
+        
+}
         
     }
 
    
-}
-       
-       
-       
-       
-/*       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-        Button sendButton;
-TextArea area;
-// init...
+      
+                   //*  give your close button an fx:id, if you haven't yet: 
+                   //<Button fx:id="closeButton" onAction="#closeButtonAction">
+                   //In your controller class:
+    //@FXML private javafx.scene.control.Button closeButton; *//
 
-// set handlers
-sendButton.setOnAction(new EventHandler<ActionEvent>() {
-    @Override
-    public void handle(ActionEvent actionEvent) {
-         sendFunction();
-    }
-});
-
-textArea.setOnKeyPressed(new EventHandler<KeyEvent>() {
-    @Override
-    public void handle(KeyEvent keyEvent) {
-        if (keyEvent.getCode() == KeyCode.ENTER)  {
-             sendFunction();
-        }
-    }
-});
-
-// define send function
-public void sendFunction() {
-    String textArea = this.textStudentKommentar.getText();
-
-    // do the send stuff  Get the text using area.getText() and clear using area.setText("");//
-
-    // clear text (you may or may not want to do this here)
-    this.textArea.setText("");
-}
+    //@FXML
+     //private void closeButtonAction(){
+                                                  // get a handle to the stage
+   // Stage stage = (Stage) closeButton.getScene().getWindow();
+                                                    // do what you have to do
+   // stage.close();    
     
-    }
-
-// For å lagre intern kommentaren//
-
-         btnSave.setOnAction(new EventHandler<ActionEvent>() {
-        @Override
-        public void handle(ActionEvent event) {
-            FileChooser saveFile = new FileChooser();
-            FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("TXT files (*.txt)", "*.txt");
-            saveFile.getExtensionFilters().add(extFilter);
-            File f = saveFile.showSaveDialog(primaryStage);
-
-        }
-    });
-
-}
-*/
+    //@FXML
+    //private void canselButtonAction(buttonAvbrytTilbakemeld) {
+      //  Stage stage = (teacherAssessment.FXML) canselButton.getScene().getWindow();
+       // stage.close(teacherAssessment.FXML);
+   // }
+    
+//}
+       
+       
