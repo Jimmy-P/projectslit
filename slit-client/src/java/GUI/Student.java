@@ -8,8 +8,9 @@ package GUI;
 import javafx.beans.property.SimpleStringProperty;
 
 /**
- *
+ * 
  * @author bevo
+ * Enkel klasse for student
  */
 public class Student {
     
