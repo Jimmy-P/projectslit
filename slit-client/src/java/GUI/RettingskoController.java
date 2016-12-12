@@ -3,55 +3,79 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package slitclient;
+package GUI;
 
-import java.sql.Connection;
-import DataModel.BrukerDataModel;
-import DataModel.ModulBesvarelseDataModel;
-import Framework.BrukerManager;
-import Framework.ModulBesvarelseManager;
+
+import Names.ViewNames;
 import java.net.URL;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.Date;
-import java.util.List;
 import java.util.ResourceBundle;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableColumn.CellDataFeatures;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.util.Callback;
+import GUI.Student;
+import Framework.ModulBesvarelseManager;
+import DataModel.ModulBesvarelseDataModel;
+import javafx.scene.input.MouseEvent;
+
 
 /**
  * FXML Controller class
+ * Dette er controller klassen for rettingskø. GUI til rettingskø er 
+ * laget i scenebuilder. 
  *
  * @author bevo
  */
 public class RettingskoController implements Initializable {
     
+    final ObservableList<Student> data = FXCollections.observableArrayList(
+            new Student("Per Olsen", "Modul 1", "29.09.16"), 
+            new Student("Ole Olsen", "Modul 2", "30.09.16"),
+            new Student("Per Ulv", "Modul 2", "02.10.16"),
+            new Student("Nils Hansen", "Modul 2", "03.10.16"),
+            new Student("Torbjørn Hovstad", "Modul 2", "04.10.16"),
+            new Student("Hans Nilsen", "Modul 3", "05.10.16")
+    );
+    
     @FXML
-    private TableView<ModulBesvarelseDataModel> MainTableView;
+    private Button buttonRK;
     @FXML
-    private TableColumn<ModulBesvarelseDataModel, Date> TabellDato;
-
+    private Button buttonSO;
+    @FXML
+    private Button buttonLTB;
+    @FXML
+    private Button buttonMO;
+    @FXML
+    private Button buttonDB;
+    @FXML
+    private TableView<Student> MainTableView;
+    @FXML
+    private TableColumn<Student, String> TabellBruker;
+    @FXML
+    private TableColumn<Student, String> TabellModul;
+    @FXML
+    private TableColumn<Student, String> TabellDato;
     
     
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {  
     
-    //@FXML
-    //private TableView<Date> MainTableView;
-
-    /**
-     * Initializes the controller class.
-     * @param url
-     * @param rb
-     */ 
+    TabellBruker.setCellValueFactory(new PropertyValueFactory<Student, String>("Bruker"));
+    TabellModul.setCellValueFactory(new PropertyValueFactory<Student, String>("Modul"));
+    TabellDato.setCellValueFactory(new PropertyValueFactory<Student, String>("Dato"));
+    
+    MainTableView.setItems(data);
+    
+    
+    } 
+    
     /*
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -66,7 +90,7 @@ public class RettingskoController implements Initializable {
         
         this.MainTableView.setItems(items);
     } 
-    
+    /*
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         ModulBesvarelseManager manager = new ModulBesvarelseManager();
@@ -82,7 +106,7 @@ public class RettingskoController implements Initializable {
     } 
     */
     
-    
+    /*
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         ModulBesvarelseManager manager = new ModulBesvarelseManager();
@@ -101,24 +125,45 @@ public class RettingskoController implements Initializable {
         MainTableView.setItems(items);
         //MainTableView.getColumns().addAll(TabellDato);
         
-    } 
+    } */
     /*
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        TabellBruker.setCellValueFactory(new PropertyValueFactory<ModulBesvarelseDataModel, String>("Bruker"));
+        TabellModul.setCellValueFactory(new PropertyValueFactory<ModulBesvarelseDataModel, String>("Modul"));
         TabellDato.setCellValueFactory(new PropertyValueFactory<ModulBesvarelseDataModel, Date>("Dato"));
         
-        ModulBesvarelseManager manager = new ModulBesvarelseManager();
         
-        ObservableList <ModulBesvarelseDataModel> items = FXCollections.observableArrayList();
-
-        for(ModulBesvarelseDataModel modulbesvarelse : manager.getAllModulBesvarelse())
-            {
-                //items.add(modulbesvarelse.getBid());
-                items.add(modulbesvarelse);
-                //items.add(modulbesvarelse.getMbTidspunkt());            
-            }
-        MainTableView.getItems().setAll(manager.getAllModulBesvarelse());
+        MainTableView.getItems().setAll();
+        
     }
-   */
+    */
+    
+       
+       @FXML
+    private void buttonRKEvent(ActionEvent event) throws Exception {
+        SceneSelecter.getInstance().setScene(ViewNames.AQView);
+        }
+    @FXML
+    private void buttonMOEvent(ActionEvent event) throws Exception {
+        SceneSelecter.getInstance().setScene(ViewNames.modulView);
+        }
+    @FXML
+    private void buttonDBEvent(ActionEvent event) throws Exception {
+        SceneSelecter.getInstance().setScene(ViewNames.DBView);
+        }
+    @FXML
+    private void buttonLTBEvent(ActionEvent event) throws Exception {
+        SceneSelecter.getInstance().setScene(ViewNames.AUFView);
+        }
+    @FXML
+    private void buttonSOEvent(ActionEvent event) throws Exception {
+        SceneSelecter.getInstance().setScene(ViewNames.modulView);  //DENNE MÅ RETTES NÅR VI HAR EN FXML FOR STUDENTOVERSIKT
+        }
+    private void buttonLogOutEvent(ActionEvent event) throws Exception {
+    SceneSelecter.getInstance().setScene(ViewNames.loginView);
+    }
+  
+    
     
 }
