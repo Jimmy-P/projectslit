@@ -6,7 +6,7 @@
 package Database;
 
 import java.io.Serializable;
-import java.util.Collection;
+import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -24,14 +24,14 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
 /**
- * Denne klassen sender spÃ¸rringer mot databasen vÃ¥r (MySQL) ved hjelp av
- * connectorJ som oversetter spÃ¸rringen vi sender i Java/JDBC 
- * (fra Payaraserveren) til MySQL. Det brukes ogsÃ¥ motsatt vei til Ã¥
+ * Denne klassen sender spørringer mot databasen vår (MySQL) ved hjelp av
+ * connectorJ som oversetter spørringen vi sender i Java/JDBC 
+ * (fra Payaraserveren) til MySQL. Det brukes også motsatt vei til å
  * oversette fra MySQL til JDBC slik at klassen kan motta informasjon
- * i respons av spÃ¸rringene.
+ * i respons av spørringene.
  *
  * Mesteparten av klassen er autogenerert ved hjelp av ConnectorJ og Payara ved 
- * bruk av en connection pool til Ã¥ lese tabellene i databasen vÃ¥r.
+ * bruk av en connection pool til å lese tabellene i databasen vår.
  * 
  * @author bevo
  * @author Adam
@@ -81,9 +81,9 @@ public class Bruker implements Serializable {
     @Column(name = "b_type")
     private int bType;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "bid")
-    private Collection<Tilbakemelding> tilbakemeldingCollection;
+    private List<Tilbakemelding> tilbakemeldingList;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "bid")
-    private Collection<Modulbesvarelse> modulbesvarelseCollection;
+    private List<Modulbesvarelse> modulbesvarelseList;
 
     public Bruker() {
     }
@@ -150,21 +150,21 @@ public class Bruker implements Serializable {
     }
 
     @XmlTransient
-    public Collection<Tilbakemelding> getTilbakemeldingCollection() {
-        return tilbakemeldingCollection;
+    public List<Tilbakemelding> getTilbakemeldingList() {
+        return tilbakemeldingList;
     }
 
-    public void setTilbakemeldingCollection(Collection<Tilbakemelding> tilbakemeldingCollection) {
-        this.tilbakemeldingCollection = tilbakemeldingCollection;
+    public void setTilbakemeldingList(List<Tilbakemelding> tilbakemeldingList) {
+        this.tilbakemeldingList = tilbakemeldingList;
     }
 
     @XmlTransient
-    public Collection<Modulbesvarelse> getModulbesvarelseCollection() {
-        return modulbesvarelseCollection;
+    public List<Modulbesvarelse> getModulbesvarelseList() {
+        return modulbesvarelseList;
     }
 
-    public void setModulbesvarelseCollection(Collection<Modulbesvarelse> modulbesvarelseCollection) {
-        this.modulbesvarelseCollection = modulbesvarelseCollection;
+    public void setModulbesvarelseList(List<Modulbesvarelse> modulbesvarelseList) {
+        this.modulbesvarelseList = modulbesvarelseList;
     }
 
     @Override

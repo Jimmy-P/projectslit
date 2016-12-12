@@ -6,7 +6,7 @@
 package Database;
 
 import java.io.Serializable;
-import java.util.Collection;
+import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -48,7 +48,7 @@ public class Ressurstype implements Serializable {
     @Column(name = "rt_typenavn")
     private String rtTypenavn;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "rtID")
-    private Collection<Ressurs> ressursCollection;
+    private List<Ressurs> ressursList;
 
     public Ressurstype() {
     }
@@ -79,12 +79,12 @@ public class Ressurstype implements Serializable {
     }
 
     @XmlTransient
-    public Collection<Ressurs> getRessursCollection() {
-        return ressursCollection;
+    public List<Ressurs> getRessursList() {
+        return ressursList;
     }
 
-    public void setRessursCollection(Collection<Ressurs> ressursCollection) {
-        this.ressursCollection = ressursCollection;
+    public void setRessursList(List<Ressurs> ressursList) {
+        this.ressursList = ressursList;
     }
 
     @Override

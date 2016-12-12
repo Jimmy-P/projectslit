@@ -6,7 +6,7 @@
 package Database;
 
 import java.io.Serializable;
-import java.util.Collection;
+import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -60,13 +60,13 @@ public class Modul implements Serializable {
     @Column(name = "m_oppgave")
     private String mOppgave;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "mid")
-    private Collection<Tilbakemelding> tilbakemeldingCollection;
+    private List<Tilbakemelding> tilbakemeldingList;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "mid")
-    private Collection<Modulbesvarelse> modulbesvarelseCollection;
+    private List<Modulbesvarelse> modulbesvarelseList;
     @OneToMany(mappedBy = "mid")
-    private Collection<Ressurs> ressursCollection;
+    private List<Ressurs> ressursList;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "mid")
-    private Collection<Laringsmal> laringsmalCollection;
+    private List<Laringsmal> laringsmalList;
 
     public Modul() {
     }
@@ -115,39 +115,39 @@ public class Modul implements Serializable {
     }
 
     @XmlTransient
-    public Collection<Tilbakemelding> getTilbakemeldingCollection() {
-        return tilbakemeldingCollection;
+    public List<Tilbakemelding> getTilbakemeldingList() {
+        return tilbakemeldingList;
     }
 
-    public void setTilbakemeldingCollection(Collection<Tilbakemelding> tilbakemeldingCollection) {
-        this.tilbakemeldingCollection = tilbakemeldingCollection;
-    }
-
-    @XmlTransient
-    public Collection<Modulbesvarelse> getModulbesvarelseCollection() {
-        return modulbesvarelseCollection;
-    }
-
-    public void setModulbesvarelseCollection(Collection<Modulbesvarelse> modulbesvarelseCollection) {
-        this.modulbesvarelseCollection = modulbesvarelseCollection;
+    public void setTilbakemeldingList(List<Tilbakemelding> tilbakemeldingList) {
+        this.tilbakemeldingList = tilbakemeldingList;
     }
 
     @XmlTransient
-    public Collection<Ressurs> getRessursCollection() {
-        return ressursCollection;
+    public List<Modulbesvarelse> getModulbesvarelseList() {
+        return modulbesvarelseList;
     }
 
-    public void setRessursCollection(Collection<Ressurs> ressursCollection) {
-        this.ressursCollection = ressursCollection;
+    public void setModulbesvarelseList(List<Modulbesvarelse> modulbesvarelseList) {
+        this.modulbesvarelseList = modulbesvarelseList;
     }
 
     @XmlTransient
-    public Collection<Laringsmal> getLaringsmalCollection() {
-        return laringsmalCollection;
+    public List<Ressurs> getRessursList() {
+        return ressursList;
     }
 
-    public void setLaringsmalCollection(Collection<Laringsmal> laringsmalCollection) {
-        this.laringsmalCollection = laringsmalCollection;
+    public void setRessursList(List<Ressurs> ressursList) {
+        this.ressursList = ressursList;
+    }
+
+    @XmlTransient
+    public List<Laringsmal> getLaringsmalList() {
+        return laringsmalList;
+    }
+
+    public void setLaringsmalList(List<Laringsmal> laringsmalList) {
+        this.laringsmalList = laringsmalList;
     }
 
     @Override
