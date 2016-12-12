@@ -6,6 +6,7 @@
 package Server;
 
 import DataModel.BrukerDataModel;
+import java.util.List;
 import javax.ejb.Remote;
 
 /**
@@ -29,6 +30,8 @@ public interface BrukerSessionBeanRemote {
     BrukerDataModel brukerLogin(String epost, String passord);
     
     public void newBruker(BrukerDataModel bdm);
+    
+    public List<BrukerDataModel> getAllBrukere();
     
     /*
     String getBrukerFNavnFromId(int bId);

@@ -114,6 +114,8 @@ public class ModulBesvarelseSessionBean implements ModulBesvarelseSessionBeanRem
     
     */
     
+    
+    
     private Modulbesvarelse convertModulBesvarelseDataModel(ModulBesvarelseDataModel mbdm,
             BrukerDataModel bdm, ModulDataModel mdm)
     {
@@ -143,6 +145,20 @@ public class ModulBesvarelseSessionBean implements ModulBesvarelseSessionBeanRem
 
     @Override
     public List<ModulBesvarelseDataModel> getAllModulBesvarelse() {
+        
+        /**
+        List<ModulBesvarelseDataModel> mbModelList = new ArrayList<>();
+        List<Modulbesvarelse> mbList = em.createNamedQuery("Modulbesvarelse.findAll").getResultList();
+        Bruker bruker = em.find(Bruker.class, bdm.getbId());
+        Modul modul = em.find(Modul.class, mdm.getmID());
+        
+        for (Modulbesvarelse mb : mbList)
+        {
+            ModulBesvarelseDataModel returnMBDataModel = convertModulBesvarelseDataModel(mb, b, m);
+        }
+                
+        return mbModelList;
+        */
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

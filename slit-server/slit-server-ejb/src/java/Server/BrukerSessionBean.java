@@ -7,6 +7,8 @@ package Server;
 
 import DataModel.BrukerDataModel;
 import Database.Bruker;
+import java.util.ArrayList;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -14,16 +16,16 @@ import javax.persistence.Query;
 
 /**
  * Inneholder "business logic" til metoder relatert
- * til brukere i datamodellen som kjÃ¸res fra klienten via et interface.
+ * til brukere i datamodellen som kjøres fra klienten via et interface.
  * 
  * Klassen lagrer informasjon i databasen ved
- * Ã¥ bruke EntityManager.persist til Ã¥ gjennomfÃ¸re spÃ¸rringer i
+ * å bruke EntityManager.persist til å gjennomføre spørringer i
  * brukerklassen i package Database. Det har noe med "persistence context"
- * Ã¥ gjÃ¸re. Jeg vet ikke riktig helt hvordan dette fungerer.
+ * å gjøre. Jeg vet ikke riktig helt hvordan dette fungerer.
  * 
  * Da dette er en stateless session bean har den ikke en aktiv kobling
- * mot noe klient. De kjÃ¸rer med andre ord uavhengig av hverandre
- * fÃ¸r det gjennomfÃ¸res en spÃ¸rring fra klienten.
+ * mot noe klient. De kjører med andre ord uavhengig av hverandre
+ * før det gjennomføres en spørring fra klienten.
  * @author Adam
  */
 @Stateless
@@ -110,7 +112,22 @@ public class BrukerSessionBean implements BrukerSessionBeanRemote {
         em.persist(newB);
     }
     
-  
+    
+    @Override
+    public List<BrukerDataModel> getAllBrukere() {
+        
+        List<BrukerDataModel> bDmList = new ArrayList<>();
+        List<Bruker> bList = em.createNamedQuery("Bruker.findAll").getResultList();
+        
+        for (Bruker b : bList)
+        {
+            BrukerDataModel bdm = convertBruker(b);
+            bDmList.add(bdm);
+            System.out.println(b.getBFnavn() + "" + b.getBEnavn());
+        }
+                
+        return bDmList;
+    }
     /*
     @Override
     public String getBrukerFNavnFromId(int bId) {

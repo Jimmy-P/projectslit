@@ -8,11 +8,13 @@ package GUI;
 import DataModel.BrukerDataModel;
 import DataModel.ModulBesvarelseDataModel;
 import DataModel.ModulDataModel;
+import Framework.BrukerManager;
 import Framework.ModulBesvarelseManager;
 import Framework.ModulManager;
 import Names.ViewNames;
 import java.net.URL;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -111,7 +113,7 @@ public class InnleveringStudentController implements Initializable {
         mdm.setmID(LoggedUserInfo.getModulnr());
        
         mbm.newModulBesvarelse(mbdm, bdm, mdm);
-        
+              
         SceneSelecter.getInstance().setScene(ViewNames.studentView); //Denne linjen sender bruker tilbake til moduloversikt. 
     }
     @FXML
@@ -122,5 +124,15 @@ public class InnleveringStudentController implements Initializable {
      @FXML
     private void logoutEvent(ActionEvent event) throws Exception {
     SceneSelecter.getInstance().setScene(ViewNames.loginView);
+    }
+    
+    @FXML
+    private void testEvent() throws Exception{
+        BrukerManager bm = new BrukerManager();
+        for (BrukerDataModel bdm : bm.getAllBrukere()) {
+            System.out.println("");
+            System.out.println(bdm.getbFnavn() + " " + bdm.getbEnavn());
+            System.out.println(bdm.getbEmail());
+        }
     }
 }

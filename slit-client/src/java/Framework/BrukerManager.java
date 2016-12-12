@@ -7,6 +7,7 @@ package Framework;
 
 import DataModel.BrukerDataModel;
 import Server.BrukerSessionBeanRemote;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.naming.Context;
@@ -81,6 +82,15 @@ public class BrukerManager {
      */
     public void newBruker(BrukerDataModel bdm){
         this.lookupBrukerSessionBeanRemote().newBruker(bdm);
+    }
+    
+    
+    /**
+     * 
+     * @return 
+     */
+    public List<BrukerDataModel> getAllBrukere(){
+        return this.lookupBrukerSessionBeanRemote().getAllBrukere();
     }
             
 }
