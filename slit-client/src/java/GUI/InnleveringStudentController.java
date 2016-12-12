@@ -66,7 +66,6 @@ public class InnleveringStudentController implements Initializable {
     ModulManager mm = new ModulManager();
     
     private int modulnr = LoggedUserInfo.getModulnr();
-    private int userid;
     private int brukerid = LoginController.getLoggedID();
     
     @FXML

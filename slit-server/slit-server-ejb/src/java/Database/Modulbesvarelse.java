@@ -6,8 +6,8 @@
 package Database;
 
 import java.io.Serializable;
-import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -57,7 +57,7 @@ public class Modulbesvarelse implements Serializable {
     @ManyToOne(optional = false)
     private Bruker bid;
     @OneToMany(mappedBy = "mbID")
-    private Collection<Ressurs> ressursCollection;
+    private List<Ressurs> ressursList;
 
     public Modulbesvarelse() {
     }
@@ -104,12 +104,12 @@ public class Modulbesvarelse implements Serializable {
     }
 
     @XmlTransient
-    public Collection<Ressurs> getRessursCollection() {
-        return ressursCollection;
+    public List<Ressurs> getRessursList() {
+        return ressursList;
     }
 
-    public void setRessursCollection(Collection<Ressurs> ressursCollection) {
-        this.ressursCollection = ressursCollection;
+    public void setRessursList(List<Ressurs> ressursList) {
+        this.ressursList = ressursList;
     }
 
     @Override

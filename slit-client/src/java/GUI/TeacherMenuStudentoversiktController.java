@@ -1,9 +1,17 @@
 package GUI;
 
 import Names.ViewNames;
+import javafx.scene.control.*;
+import DataModel.OversiktDataModel;
+import Framework.BrukerManager;
+import java.net.URL;
+import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.control.cell.*;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -15,7 +23,7 @@ import javafx.scene.control.Button;
  *
  * @author Maria
  */
-public class TeacherMenuStudentoversiktController {
+public class TeacherMenuStudentoversiktController implements Initializable {
     
     @FXML
     private Button buttonRK;
@@ -50,20 +58,20 @@ public class TeacherMenuStudentoversiktController {
         SceneSelecter.getInstance().setScene(ViewNames.SOView);
         }
     
-    /*@FXML
-    private TableView<MyDataModel> myTableView;
+    @FXML
+    private TableView<OversiktDataModel> oversiktTableView;
 
     @FXML
-    private TableColumn<MyDataModel, String> idColumn;
+    private TableColumn<OversiktDataModel, String> fNameColumn;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-    idColumn.setCellValueFactory(new PropertyValueFactory<MyDataModel, String>"idColumn"));
+    fNameColumn.setCellValueFactory(new PropertyValueFactory<OversiktDataModel, String>("fNameColumn"));
 
-    myTableView.getItems().setAll(getItemsToAdd());
+    //oversiktTableView.getItems().setAll(getbFnavn());
 }
 
-private List<MyDataModel> getItemsToAdd(){
+//private List<OversiktDataModel> getbFnavn(){
 // this method would fetch the necessary items from database.
-}*/
+//}
 }

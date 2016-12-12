@@ -10,7 +10,6 @@ import DataModel.BrukerDataModel;
 import DataModel.ModulDataModel;
 import Database.Bruker;
 import Database.Modul;
-import Database.ModulbesvarelsePK;
 import Database.Modulbesvarelse;
 import java.util.ArrayList;
 import java.util.List;
