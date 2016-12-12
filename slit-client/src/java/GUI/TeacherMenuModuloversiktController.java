@@ -169,4 +169,10 @@ public class TeacherMenuModuloversiktController implements Initializable {
     private void buttonSOEvent(ActionEvent event) throws Exception {
         SceneSelecter.getInstance().setScene(ViewNames.SOView);
         }
+
+    @FXML
+    private void logoutEvent(ActionEvent event) throws Exception {
+      SceneSelecter.getInstance().setScene(ViewNames.loginView);
+
+    }
 }
