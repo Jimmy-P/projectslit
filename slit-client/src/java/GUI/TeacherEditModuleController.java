@@ -5,10 +5,16 @@
  */
 package GUI;
 
+import DataModel.BrukerDataModel;
+import DataModel.LaringsmalDataModel;
+import DataModel.ModulBesvarelseDataModel;
+import DataModel.ModulDataModel;
 import Framework.LaringsmalManager;
+import Framework.ModulBesvarelseManager;
 import Framework.ModulManager;
 import Names.ViewNames;
 import java.net.URL;
+import java.util.Date;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -71,6 +77,8 @@ public class TeacherEditModuleController implements Initializable {
     ModulManager mm = new ModulManager();
     
     private int modulnr = LoggedUserInfo.getModulnr();
+    @FXML
+    private TextField textfieldNyttLM;
    
     
     
@@ -81,35 +89,12 @@ public class TeacherEditModuleController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         CheckboxLærmål1Innlev.setText(lm.getLaringsmalFromId(1));
-        if(CheckboxLærmål1Innlev.getText()=="")
-        {
-            CheckboxLærmål1Innlev.setVisible(false);
-        }
         CheckboxLærmål2Innlev.setText(lm.getLaringsmalFromId(2));
-        if(CheckboxLærmål2Innlev.getText()=="")
-        {
-            CheckboxLærmål2Innlev.setVisible(false);
-        }
         CheckboxLærmål3Innlev.setText(lm.getLaringsmalFromId(3));
-        if(CheckboxLærmål3Innlev.getText()=="")
-        {
-            CheckboxLærmål3Innlev.setVisible(false);
-        }
         CheckboxLærmål4Innlev.setText(lm.getLaringsmalFromId(4));
-        if(CheckboxLærmål4Innlev.getText()=="")
-        {
-            CheckboxLærmål4Innlev.setVisible(false);
-        }
         CheckboxLærmål5Innlev.setText(lm.getLaringsmalFromId(5));
-        if(CheckboxLærmål5Innlev.getText()=="")
-        {
-            CheckboxLærmål5Innlev.setVisible(false);
-        }
-        CheckboxLærmål6Innlev.setText(lm.getLaringsmalFromId(6));
-        if(CheckboxLærmål6Innlev.getText()=="")
-        {
-            CheckboxLærmål6Innlev.setVisible(false);
-        }
+       CheckboxLærmål6Innlev.setText(lm.getLaringsmalFromId(6));
+        
         
         labelModulDescr.setText("Rediger "+mm.getModulName(modulnr));
     }    
@@ -125,30 +110,83 @@ public class TeacherEditModuleController implements Initializable {
 
     @FXML
     private void editLM1(ActionEvent event) {
+       
         
-        lm.setLaringsMal(1, "Læringsmål 1 redigert");
+        LaringsmalManager lm = new LaringsmalManager();
+        LaringsmalDataModel ldm = new LaringsmalDataModel();
+        ModulDataModel mdm = new ModulDataModel();
+        String nyLM = textfieldNyttLM.getText();
+        ldm.setLID(1);
+        ldm.setLtekst(nyLM);
+        mdm.setmID(1);
+        lm.setLaringsMal(ldm, mdm);
         CheckboxLærmål1Innlev.setText(lm.getLaringsmalFromId(1));
-        
-    }
+     }
 
     @FXML
     private void editLM2(ActionEvent event) {
+        LaringsmalManager lm = new LaringsmalManager();
+        LaringsmalDataModel ldm = new LaringsmalDataModel();
+        ModulDataModel mdm = new ModulDataModel();
+        String nyLM = textfieldNyttLM.getText();
+        ldm.setLID(2);
+        ldm.setLtekst(nyLM);
+        mdm.setmID(2);
+        lm.setLaringsMal(ldm, mdm);
+        CheckboxLærmål2Innlev.setText(lm.getLaringsmalFromId(2));
     }
 
     @FXML
     private void editLM3(ActionEvent event) {
+        LaringsmalManager lm = new LaringsmalManager();
+        LaringsmalDataModel ldm = new LaringsmalDataModel();
+        ModulDataModel mdm = new ModulDataModel();
+        String nyLM = textfieldNyttLM.getText();
+        ldm.setLID(3);
+        ldm.setLtekst(nyLM);
+        mdm.setmID(3);
+        lm.setLaringsMal(ldm, mdm);
+        CheckboxLærmål3Innlev.setText(lm.getLaringsmalFromId(3));
     }
 
     @FXML
     private void editLM4(ActionEvent event) {
+        LaringsmalManager lm = new LaringsmalManager();
+        LaringsmalDataModel ldm = new LaringsmalDataModel();
+        ModulDataModel mdm = new ModulDataModel();
+        String nyLM = textfieldNyttLM.getText();
+        ldm.setLID(4);
+        ldm.setLtekst(nyLM);
+        mdm.setmID(4);
+        lm.setLaringsMal(ldm, mdm);
+        CheckboxLærmål4Innlev.setText(lm.getLaringsmalFromId(4));
+        
     }
 
     @FXML
     private void editLM5(ActionEvent event) {
+        LaringsmalManager lm = new LaringsmalManager();
+        LaringsmalDataModel ldm = new LaringsmalDataModel();
+        ModulDataModel mdm = new ModulDataModel();
+        String nyLM = textfieldNyttLM.getText();
+        ldm.setLID(5);
+        ldm.setLtekst(nyLM);
+        mdm.setmID(5);
+        lm.setLaringsMal(ldm, mdm);
+        CheckboxLærmål5Innlev.setText(lm.getLaringsmalFromId(5));
     }
 
     @FXML
     private void editLM6(ActionEvent event) {
+        LaringsmalManager lm = new LaringsmalManager();
+        LaringsmalDataModel ldm = new LaringsmalDataModel();
+        ModulDataModel mdm = new ModulDataModel();
+        String nyLM = textfieldNyttLM.getText();
+        ldm.setLID(6);
+        ldm.setLtekst(nyLM);
+        mdm.setmID(6);
+        lm.setLaringsMal(ldm, mdm);
+        CheckboxLærmål6Innlev.setText(lm.getLaringsmalFromId(6));
     }
     
 }

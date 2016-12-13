@@ -4,6 +4,7 @@
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
@@ -37,6 +38,7 @@
             <Button fx:id="buttonEditLM4" layoutX="299.0" layoutY="214.0" mnemonicParsing="false" onAction="#editLM4" prefHeight="0.0" prefWidth="63.0" text="Rediger" />
             <Button fx:id="buttonEditLM5" layoutX="299.0" layoutY="239.0" mnemonicParsing="false" onAction="#editLM5" prefHeight="0.0" prefWidth="63.0" text="Rediger" />
             <Button fx:id="buttonEditLM6" layoutX="299.0" layoutY="266.0" mnemonicParsing="false" onAction="#editLM6" prefHeight="0.0" prefWidth="63.0" text="Rediger" />
+            <TextField fx:id="textfieldNyttLM" layoutX="25.0" layoutY="84.0" prefHeight="25.0" prefWidth="389.0" promptText="Skriv inn nytt læringsmål her" />
          </children>
       </Pane>
    </children>

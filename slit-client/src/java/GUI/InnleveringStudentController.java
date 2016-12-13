@@ -9,12 +9,12 @@ import DataModel.BrukerDataModel;
 import DataModel.ModulBesvarelseDataModel;
 import DataModel.ModulDataModel;
 import Framework.BrukerManager;
+import Framework.LaringsmalManager;
 import Framework.ModulBesvarelseManager;
 import Framework.ModulManager;
 import Names.ViewNames;
 import java.net.URL;
 import java.util.Date;
-import java.util.Iterator;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -23,7 +23,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 
 /**
@@ -66,6 +65,7 @@ public class InnleveringStudentController implements Initializable {
     private Button ButtonSendInnlev;
     
     ModulManager mm = new ModulManager();
+    LaringsmalManager lm = new LaringsmalManager();
     
     private int modulnr = LoggedUserInfo.getModulnr();
     private int brukerid = LoginController.getLoggedID();
@@ -79,12 +79,12 @@ public class InnleveringStudentController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        CheckboxLærmål1Innlev.setText("LM 1");
-        CheckboxLærmål2Innlev.setText("LM 2");
-        CheckboxLærmål3Innlev.setText("LM 3");
-        CheckboxLærmål4Innlev.setText("LM 4");
-        CheckboxLærmål5Innlev.setText("LM 5");
-        CheckboxLærmål6Innlev.setText("LM 6");
+        CheckboxLærmål1Innlev.setText(lm.getLaringsmalFromId(1));
+        CheckboxLærmål2Innlev.setText(lm.getLaringsmalFromId(2));
+        CheckboxLærmål3Innlev.setText(lm.getLaringsmalFromId(3));
+        CheckboxLærmål4Innlev.setText(lm.getLaringsmalFromId(4));
+        CheckboxLærmål5Innlev.setText(lm.getLaringsmalFromId(5));
+        CheckboxLærmål6Innlev.setText(lm.getLaringsmalFromId(6));
         
         labelModulDescr.setText(mm.getModulName(modulnr)+ " - "+ mm.getModulDescr(modulnr));
         

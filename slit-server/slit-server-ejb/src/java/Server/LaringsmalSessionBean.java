@@ -5,7 +5,10 @@
  */
 package Server;
 
+import DataModel.LaringsmalDataModel;
+import DataModel.ModulDataModel;
 import Database.Laringsmal;
+import Database.Modul;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -36,9 +39,30 @@ public class LaringsmalSessionBean implements LaringsmalSessionBeanRemote {
                 
       
     }
-    @Override
-    public void setLaringsMal(int l_ID, String string)
+    
+    private Laringsmal convertLaringsmal(LaringsmalDataModel ldm, ModulDataModel mdm)
     {
-        em.find(Laringsmal.class, l_ID).setLTekst(string);
+        Modul modul = em.find(Modul.class, mdm.getmID());
+        
+        Laringsmal laringsmal = new Laringsmal();
+        
+        laringsmal.setLID(ldm.getLID());
+        laringsmal.setLTekst(ldm.getLtekst());
+        laringsmal.setMid(modul);
+        
+        return laringsmal;
+        
+    }
+    
+            
+    
+    @Override
+    public void setLaringsMal(LaringsmalDataModel ldm, ModulDataModel mdm)
+    {
+        
+        Laringsmal setLM = convertLaringsmal(ldm, mdm);
+        em.merge(setLM);
+        
+       
     }
 }

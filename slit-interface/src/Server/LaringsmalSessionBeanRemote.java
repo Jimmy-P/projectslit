@@ -5,6 +5,8 @@
  */
 package Server;
 
+import DataModel.LaringsmalDataModel;
+import DataModel.ModulDataModel;
 import javax.ejb.Remote;
 
 /**
@@ -16,6 +18,7 @@ import javax.ejb.Remote;
 public interface LaringsmalSessionBeanRemote {
     
     String getLaringsmalFromId(int l_ID);
-    void setLaringsMal(int l_ID, String string);
+    //void setLaringsMal(int l_ID, String string);
+    public void setLaringsMal(LaringsmalDataModel ldm, ModulDataModel mdm);
     
 }

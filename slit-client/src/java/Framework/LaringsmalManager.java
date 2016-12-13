@@ -5,6 +5,8 @@
  */
 package Framework;
 
+import DataModel.LaringsmalDataModel;
+import DataModel.ModulDataModel;
 import Server.LaringsmalSessionBeanRemote;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -40,13 +42,19 @@ public class LaringsmalManager {
     
    
     
+    public void setLaringsMal(LaringsmalDataModel ldm, ModulDataModel mdm){
+        this.lookupLaringsmalSessionBeanRemote().setLaringsMal(ldm, mdm);
+    }
+    
     public String getLaringsmalFromId(int l_ID) {
         return this.lookupLaringsmalSessionBeanRemote().getLaringsmalFromId(l_ID);
 }
+    
+    /*
     public void setLaringsMal(int l_ID, String string)
     {
         this.lookupLaringsmalSessionBeanRemote().setLaringsMal(l_ID, string);
     }
-    
+    */
     
 }
