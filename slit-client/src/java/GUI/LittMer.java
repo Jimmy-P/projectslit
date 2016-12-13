@@ -5,7 +5,7 @@ Jeg kan bruke forskjellige plasseringer på
 knapper og lables, bruk av panes og boxes.
 Jeg kan bruke CSS.
  */
-package GUI;
+package litt.mer;
 
 import javafx.application.Application;
 import static javafx.application.Application.launch;
