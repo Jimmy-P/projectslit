@@ -139,6 +139,7 @@ public class StudentStatusStudentController implements Initializable {
         
     }
     //Knapp for å levere modul 1
+    //Bruker int til å hente informasjon i DB og linke til riktig modul.
     @FXML
     private void leverModul1(ActionEvent event) throws Exception {
         LoggedUserInfo.setModulnr(1);
