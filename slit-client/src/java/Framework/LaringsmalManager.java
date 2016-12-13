@@ -43,7 +43,10 @@ public class LaringsmalManager {
     public String getLaringsmalFromId(int l_ID) {
         return this.lookupLaringsmalSessionBeanRemote().getLaringsmalFromId(l_ID);
 }
-
+    public void setLaringsMal(int l_ID, String string)
+    {
+        this.lookupLaringsmalSessionBeanRemote().setLaringsMal(l_ID, string);
+    }
     
     
 }

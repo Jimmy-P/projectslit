@@ -175,4 +175,34 @@ public class TeacherMenuModuloversiktController implements Initializable {
       SceneSelecter.getInstance().setScene(ViewNames.loginView);
 
     }
+
+    @FXML
+    private void editModule1(ActionEvent event) throws Exception{
+        LoggedUserInfo.setModulnr(1);
+        SceneSelecter.getInstance().setScene(ViewNames.editModView);
+    }
+
+    @FXML
+    private void editModule2(ActionEvent event) throws Exception{
+        LoggedUserInfo.setModulnr(2);
+        SceneSelecter.getInstance().setScene(ViewNames.editModView);
+    }
+
+    @FXML
+    private void editModule3(ActionEvent event) throws Exception{
+        LoggedUserInfo.setModulnr(3);
+        SceneSelecter.getInstance().setScene(ViewNames.editModView);
+    }
+
+    @FXML
+    private void editModule4(ActionEvent event) throws Exception{
+        LoggedUserInfo.setModulnr(4);
+        SceneSelecter.getInstance().setScene(ViewNames.editModView);
+    }
+
+    @FXML
+    private void editModule5(ActionEvent event) throws Exception{
+        LoggedUserInfo.setModulnr(5);
+        SceneSelecter.getInstance().setScene(ViewNames.editModView);
+    }
 }

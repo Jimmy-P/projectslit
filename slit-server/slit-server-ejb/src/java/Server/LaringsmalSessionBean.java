@@ -11,11 +11,11 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 /**
- * * Inneholder "business logic" til metoder som kjøres fra klienten via
+ * * Inneholder "business logic" til metoder som kjres fra klienten via
  * et interface.
  * 
  * Da dette er en stateless session bean lagrer den ikke noe informasjonen
- * om læringsmålene etter metodekallet er gjennomført.
+ * om lringsmlene etter metodekallet er gjennomfrt.
  * @author bevo
  */
 @Stateless
@@ -35,5 +35,10 @@ public class LaringsmalSessionBean implements LaringsmalSessionBeanRemote {
         return em.find(Laringsmal.class, l_ID).getLTekst();
                 
       
+    }
+    @Override
+    public void setLaringsMal(int l_ID, String string)
+    {
+        em.find(Laringsmal.class, l_ID).setLTekst(string);
     }
 }

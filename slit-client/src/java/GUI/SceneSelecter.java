@@ -41,6 +41,7 @@ public class SceneSelecter extends Application {
             put(ViewNames.studentView, "StudentStatusStudent.fxml"); 
             put(ViewNames.SOView, "TeacherMenuStudentoversikt.fxml");
             put(ViewNames.innleveringView, "InnleveringStudent.fxml");
+            put(ViewNames.editModView, "TeacherEditModule.fxml");
         }
         
     }; 

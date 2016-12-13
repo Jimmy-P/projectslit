@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.TeacherEditModuleController">
+   <children>
+      <Pane fx:id="PaneBakgrunnInnlev" layoutY="-7.0" prefHeight="414.0" prefWidth="616.0">
+         <children>
+            <ListView fx:id="ListviewInnlev" layoutX="16.0" layoutY="119.0" prefHeight="232.0" prefWidth="398.0" />
+            <CheckBox fx:id="CheckboxLærmål1Innlev" layoutX="41.0" layoutY="134.0" mnemonicParsing="false" text="Læringsmål 1" />
+            <CheckBox fx:id="CheckboxLærmål2Innlev" layoutX="41.0" layoutY="160.0" mnemonicParsing="false" text="Læringsmål 2" />
+            <CheckBox fx:id="CheckboxLærmål3Innlev" layoutX="41.0" layoutY="190.0" mnemonicParsing="false" text="Læringsmål 3" />
+            <CheckBox fx:id="CheckboxLærmål4Innlev" layoutX="41.0" layoutY="218.0" mnemonicParsing="false" text="Læringsmål 4" />
+            <CheckBox fx:id="CheckboxLærmål5Innlev" layoutX="41.0" layoutY="243.0" mnemonicParsing="false" text="Læringsmål 5" />
+            <CheckBox fx:id="CheckboxLærmål6Innlev" layoutX="41.0" layoutY="270.0" mnemonicParsing="false" text="Læringsmål 6" />
+            <Button fx:id="ButtonTilbakeInnlev" layoutX="500.0" layoutY="351.0" mnemonicParsing="false" onAction="#cancelEvent" text="Tilbake">
+               <font>
+                  <Font name="Bauhaus 93" size="11.0" />
+               </font>
+            </Button>
+            <Button fx:id="ButtonVideoInnlev" layoutX="503.0" layoutY="156.0" mnemonicParsing="false" text="Video" />
+            <Button fx:id="ButtonLesestoffInnlev" layoutX="497.0" layoutY="195.0" mnemonicParsing="false" text="Lesestoff" />
+            <Label fx:id="LabelHjelpemidlerInnlev" layoutX="495.0" layoutY="119.0" text="Hjelpemidler" />
+            <Label fx:id="labelModulDescr" layoutX="25.0" layoutY="33.0" prefHeight="57.0" prefWidth="389.0" text="Modul 1">
+               <font>
+                  <Font name="Bauhaus 93" size="24.0" />
+               </font>
+            </Label>
+            <Button fx:id="buttonEditLM1" layoutX="299.0" layoutY="130.0" mnemonicParsing="false" onAction="#editLM1" prefHeight="0.0" prefWidth="63.0" text="Rediger" />
+            <Button fx:id="buttonEditLM2" layoutX="299.0" layoutY="156.0" mnemonicParsing="false" onAction="#editLM2" prefHeight="0.0" prefWidth="63.0" text="Rediger" />
+            <Button fx:id="buttonEditLM3" layoutX="299.0" layoutY="186.0" mnemonicParsing="false" onAction="#editLM3" prefHeight="0.0" prefWidth="63.0" text="Rediger" />
+            <Button fx:id="buttonEditLM4" layoutX="299.0" layoutY="214.0" mnemonicParsing="false" onAction="#editLM4" prefHeight="0.0" prefWidth="63.0" text="Rediger" />
+            <Button fx:id="buttonEditLM5" layoutX="299.0" layoutY="239.0" mnemonicParsing="false" onAction="#editLM5" prefHeight="0.0" prefWidth="63.0" text="Rediger" />
+            <Button fx:id="buttonEditLM6" layoutX="299.0" layoutY="266.0" mnemonicParsing="false" onAction="#editLM6" prefHeight="0.0" prefWidth="63.0" text="Rediger" />
+         </children>
+      </Pane>
+   </children>
+</Pane>

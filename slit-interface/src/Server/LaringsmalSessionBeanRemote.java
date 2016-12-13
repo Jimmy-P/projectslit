@@ -16,5 +16,6 @@ import javax.ejb.Remote;
 public interface LaringsmalSessionBeanRemote {
     
     String getLaringsmalFromId(int l_ID);
+    void setLaringsMal(int l_ID, String string);
     
 }
