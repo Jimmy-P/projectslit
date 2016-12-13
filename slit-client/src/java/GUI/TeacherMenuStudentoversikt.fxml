@@ -24,8 +24,10 @@
                   <Font name="Bauhaus 93" size="48.0" />
                </font>
             </Label>
-            <ScrollPane disable="false" visible="true">
+            <ScrollPane disable="false" visible="true" fitToHeight="True" fitToWidth="True">
             <content>
+                <TextArea fx:id="testTextArea">
+                    </TextArea>
                 <TableView fx:id="oversiktTableView" prefHeight="-1.0" prefWidth="-1.0">
                     <columns>
                         <TableColumn fx:id="fNameColumn" prefWidth="100.0" text="Fornavn" />
