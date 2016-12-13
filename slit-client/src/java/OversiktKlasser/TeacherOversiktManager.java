@@ -3,12 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Framework;
+package OversiktKlasser;
 
 import DataModel.BrukerDataModel;
 import java.util.*;
 import GUI.TeacherMenuStudentoversiktController;
 import DataModel.BrukerDataModel;
+import Framework.BrukerManager;
 import Framework.BrukerManager;
 import java.net.URL;
 import java.util.*;
@@ -21,7 +22,7 @@ import javafx.geometry.Insets;
 import javafx.scene.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.beans.property.SimpleIntegerProperty;
-import Framework.OversiktEnhet;
+import OversiktKlasser.OversiktEnhet;
 
 /**
  *

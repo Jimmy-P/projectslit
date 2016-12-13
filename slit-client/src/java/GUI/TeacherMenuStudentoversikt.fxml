@@ -26,12 +26,9 @@
             </Label>
             <ScrollPane disable="false" visible="true" fitToHeight="True" fitToWidth="True">
             <content>
-                <TextArea fx:id="testTextArea">
-                    </TextArea>
                 <TableView fx:id="oversiktTableView" prefHeight="-1.0" prefWidth="-1.0">
                     <columns>
-                        <TableColumn fx:id="fNameColumn" prefWidth="100.0" text="Fornavn" />
-                        <TableColumn fx:id="eNameColumn" prefWidth="100.0" text="Etternavn" />
+                        <TableColumn fx:id="nameColumn" prefWidth="100.0" text="Navn" />
                         <TableColumn fx:id="mailColumn" prefWidth="100.0" text="epost" />
                         <TableColumn fx:id="mod1Column" prefWidth="100.0" text="Modul 1" />
                         <TableColumn fx:id="mod2Column" prefWidth="100.0" text="Modul 2" />

@@ -3,8 +3,11 @@ package GUI;
 import DataModel.BrukerDataModel;
 import Names.ViewNames;
 import javafx.scene.control.*;
-import DataModel.OversiktDataModel;
-import Framework.BrukerManager;
+import OversiktKlasser.OversiktDataModel;
+import OversiktKlasser.StudentOversikt;
+import OversiktKlasser.BesvarelseOversikt;
+import OversiktKlasser.CombineOversikt;
+import OversiktKlasser.TilbakemeldingOversikt;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -12,8 +15,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.cell.*;
-import Framework.TeacherOversiktManager;
-import Framework.OversiktEnhet;
+import OversiktKlasser.TeacherOversiktManager;
+import OversiktKlasser.OversiktEnhet;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -26,6 +31,35 @@ import Framework.OversiktEnhet;
  * @author Maria
  */
 public class TeacherMenuStudentoversiktController implements Initializable {
+    
+    final ObservableList<StudentOversikt> studentData = FXCollections.observableArrayList(
+            new StudentOversikt(1, "Per Olsen", "polsen@online.no"), 
+            new StudentOversikt(2, "Ole Olsen", "oolsen@online.no"),
+            new StudentOversikt(3, "Per Ulv", "pulv@gmail.com"),
+            new StudentOversikt(4, "Nils Hansen", "Modul 2"),
+            new StudentOversikt(5, "Torbjørn Hovstad", "Modul 2"),
+            new StudentOversikt(6, "Hans Nilsen", "Modul 3")
+    );
+    
+    final ObservableList<BesvarelseOversikt> besvarelseData = FXCollections.observableArrayList(
+            new BesvarelseOversikt(1, 1, "30.04.2016"), 
+            new BesvarelseOversikt(2, 1, "24.05.2016"),
+            new BesvarelseOversikt(3, 1, "pulv@gmail.com"),
+            new BesvarelseOversikt(4, 1, "Modul 2"),
+            new BesvarelseOversikt(5, 1, "Modul 2"),
+            new BesvarelseOversikt(6, 1, "Modul 3")
+    );
+    
+    final ObservableList<TilbakemeldingOversikt> tilbakemeldingData = FXCollections.observableArrayList(
+            new TilbakemeldingOversikt(1, 1, 3, "30.04.2016"), 
+            new TilbakemeldingOversikt(1, 2, 2, "30.04.2016"), 
+            new TilbakemeldingOversikt(1, 2, 2, "30.04.2016"), 
+            new TilbakemeldingOversikt(1, 3, 3, "30.04.2016"), 
+            new TilbakemeldingOversikt(1, 3, 3, "30.04.2016"), 
+            new TilbakemeldingOversikt(1, 4, 3, "30.04.2016"), 
+            new TilbakemeldingOversikt(1, 5, 3, "30.04.2016") 
+    );
+    
     
     @FXML
     private Button buttonRK;
@@ -64,10 +98,9 @@ public class TeacherMenuStudentoversiktController implements Initializable {
     private TextArea testTextArea;
     
     @FXML
-    private TableView<OversiktDataModel> oversiktTableView;
+    private TableView<StudentOversikt> oversiktTableView;
     
-    private TableColumn<OversiktDataModel, String> fNameColumn;
-    private TableColumn<OversiktDataModel, String> eNameColumn;
+    private TableColumn<OversiktDataModel, String> nameColumn;
     private TableColumn<OversiktDataModel, String> mailColumn;
     private TableColumn<OversiktDataModel, String> mod1Column;
     private TableColumn<OversiktDataModel, String> mod2Column;
@@ -81,15 +114,22 @@ public class TeacherMenuStudentoversiktController implements Initializable {
     private TableColumn<OversiktDataModel, String> mod10Column;
     
     @Override
-    public void initialize (URL location, ResourceBundle resources) {
-    //    testTextArea.textProperty().bind();
-    }
+    public void initialize(URL url, ResourceBundle rb) {  
+    
+    nameColumn.setCellValueFactory(new PropertyValueFactory<>("oversiktStudentNavn"));
+    mailColumn.setCellValueFactory(new PropertyValueFactory<>("MoversiktStudentMail"));
+    
+    oversiktTableView.setItems(studentData);
+    
+    
+    } 
+    
+    
+    
     
     public void fillOversiktTableView(String text) {
-        fNameColumn.setCellValueFactory(
+        nameColumn.setCellValueFactory(
                 new PropertyValueFactory<>("firstName"));
-        eNameColumn.setCellValueFactory(
-                new PropertyValueFactory<>("lastName"));
         mailColumn.setCellValueFactory(
                 new PropertyValueFactory<>("email"));
         mod1Column.setCellValueFactory(
@@ -114,7 +154,8 @@ public class TeacherMenuStudentoversiktController implements Initializable {
                 new PropertyValueFactory<>("mod10"));
  
         //oversiktTableView.setItems(OversiktEnhet.oversiktEnheter);
-        oversiktTableView.getColumns().addAll(fNameColumn, eNameColumn, mailColumn,
+        /*
+        oversiktTableView.getColumns().addAll(nameColumn, mailColumn,
                 mod1Column, mod2Column, mod3Column, mod4Column, mod5Column,
                 mod6Column, mod7Column, mod8Column, mod9Column, mod10Column);
     }
@@ -140,4 +181,5 @@ public class TeacherMenuStudentoversiktController implements Initializable {
             System.out.println(bdm.getbEmail());
         }
     }*/
-
+}
+}
